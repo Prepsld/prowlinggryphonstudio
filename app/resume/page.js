@@ -7,6 +7,7 @@ import Blurb from '../components/Blurb';
 export default function Resume() {
   return (
     <div class="prose">
+        <Blurb />
       <Navigation />
       <div className="container mx-auto mt-8" >
         <h1 className="text-3xl font-bold mb-4">Resume</h1>
