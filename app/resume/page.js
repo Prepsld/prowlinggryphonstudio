@@ -8,14 +8,41 @@ export default function Resume() {
   return (
     <div class="prose">
       <Navigation />
-      <Blurb />
-      <h1>Beauty requires exploration.</h1>
-    <h2>Nothing is impossible. The world is aglow with electromagnetic forces.</h2>
-    <p>Hello there, welcome to my webpage. Over my two year program at the Southern Alberta Institute of Technology I have learned
-      several useful skills, such as: HTML, CSS, Javascript, React, Node.js, and SQL. I have also learned Object Oriented Programming using both Java and C#.
-      My passion one day is to create retro styled video games, and I am currently working on a project using Unity and C#.
-    </p>
-    <h3>Although you may not realize it, you are authentic.</h3>
+      <div className="container mx-auto mt-8" >
+        <h1 className="text-3xl font-bold mb-4">Resume</h1>
+
+        {/* Education Section */}
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Education</h2>
+          <p>Southern Alberta Institute of Technology - Software Development, Expected graduation May 2024</p>
+        </section>
+
+        {/* Work Experience Section */}
+        <section className="mt-4">
+          <h2 className="text-2xl font-bold mb-2">Work Experience</h2>
+          <p>Job Title - Company, Start Date to End Date</p>
+          <p>Job Responsibilities...</p>
+        </section>
+
+        {/* Skills Section */}
+        <section className="mt-4">
+          <h2 className="text-2xl font-bold mb-2">Skills</h2>
+          <ul>
+            <li>JavaScript</li>
+            <li>React.js</li>
+            <li>Node.js</li>
+            <li>PL/SQL</li>
+            <li>Java</li>
+            <li>C#</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Unity</li>
+            {/* Add more skills as needed */}
+          </ul>
+        </section>
+        
+        {/* Add more sections as needed */}
+      </div>
     </div>
   );
-}
+};
