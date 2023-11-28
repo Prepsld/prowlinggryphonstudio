@@ -1,10 +1,10 @@
 // Define the HomePage component
 
-import Navigation from './components/Navigation';
-import Blurb from './components/Blurb';
+import Navigation from '../components/Navigation';
+import Blurb from '../components/Blurb';
 
 
-export default function HomePage() {
+export default function Resume() {
   return (
     <div class="prose">
       <Navigation />
