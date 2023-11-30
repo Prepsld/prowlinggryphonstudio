@@ -6,7 +6,7 @@ import Blurb from '../components/Blurb';
 
 export default function Projects() {
   return (
-    <div className="prose container mx-auto">
+    <div className="prose container mx-auto max-w-screen-md ">
       <h1 className="text-4xl font-bold mb-4"> PROWLING GRYPHON STUDIOS</h1>
       <Navigation />
       <Blurb />

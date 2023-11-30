@@ -6,7 +6,7 @@ import Blurb from '../components/Blurb';
 
 export default function Resume() {
   return (
-    <div className="prose container mx-auto">
+    <div className="prose container mx-auto max-w-screen-md">
       <h1 className="text-4xl font-bold mb-4"> PROWLING GRYPHON STUDIOS</h1>
       <Navigation />
       <Blurb />
@@ -33,11 +33,10 @@ export default function Resume() {
         <section className="mt-4 ">
           <h2 className="text-2xl font-bold mb-2">Skills</h2>
 
-            <ul className="text-xs">
-              <li>JavaScript</li>
-            </ul>
-            {/* Add more skills as needed */}
-       
+          <ul>
+            <li>JavaScript</li>
+          </ul>
+          {/* Add more skills as needed */}
         </section>
 
         {/* Add more sections as needed */}
