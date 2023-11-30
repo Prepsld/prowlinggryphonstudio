@@ -6,16 +6,20 @@ import Blurb from '../components/Blurb';
 
 export default function Resume() {
   return (
-    <div class="prose">
-        <Blurb />
+    <div className="prose container mx-auto">
+      <h1 className="text-4xl font-bold mb-4"> PROWLING GRYPHON STUDIOS</h1>
       <Navigation />
-      <div className="container mx-auto mt-8" >
+      <Blurb />
+      <div className="container mx-auto mt-8 w-full h-full">
         <h1 className="text-3xl font-bold mb-4">Resume</h1>
 
         {/* Education Section */}
         <section>
           <h2 className="text-2xl font-bold mb-2">Education</h2>
-          <p>Southern Alberta Institute of Technology - Software Development, Expected graduation May 2024</p>
+          <p>
+            Southern Alberta Institute of Technology - Software Development,
+            Expected graduation May 2024
+          </p>
         </section>
 
         {/* Work Experience Section */}
@@ -26,22 +30,16 @@ export default function Resume() {
         </section>
 
         {/* Skills Section */}
-        <section className="mt-4">
+        <section className="mt-4 ">
           <h2 className="text-2xl font-bold mb-2">Skills</h2>
-          <ul>
-            <li>JavaScript</li>
-            <li>React.js</li>
-            <li>Node.js</li>
-            <li>PL/SQL</li>
-            <li>Java</li>
-            <li>C#</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Unity</li>
+
+            <ul className="text-xs">
+              <li>JavaScript</li>
+            </ul>
             {/* Add more skills as needed */}
-          </ul>
+       
         </section>
-        
+
         {/* Add more sections as needed */}
       </div>
     </div>

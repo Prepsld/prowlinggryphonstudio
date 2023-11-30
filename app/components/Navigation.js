@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Navigation = () => {
   return (
-    <nav className="navbar bg-base-300" >
+    <nav className="navbar bg-base-300">
       <div className="container mx-auto flex items-center justify-between">
         <div>
           <Link href="/" className="btn btn-ghost text-xl">
