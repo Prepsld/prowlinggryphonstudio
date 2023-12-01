@@ -1,5 +1,5 @@
 // Define the HomePage component
-
+"use client";
 import Navigation from "./components/Navigation";
 import Blurb from "./components/Blurb";
 

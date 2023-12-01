@@ -1,5 +1,5 @@
 // Define the HomePage component
-
+"use client";
 import Navigation from '../components/Navigation';
 import Blurb from '../components/Blurb';
 
@@ -12,16 +12,59 @@ export default function Resume() {
       <Navigation />
       <div className="container mx-auto mt-8">
         <h1 className="text-3xl font-bold mb-4">Resume</h1>
+        <h2>David Prepsl</h2>
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Contact Information</h2>
+          <p>Phone: 403-393-1372</p>
+          {/* You can add placeholders for LinkedIn and GitHub */}
+          <p>
+            <a
+              className="link link-accent"
+              target="_blank"
+              href="https://www.linkedin.com/in/david-prepsl-2b384a24b/"
+            >
+              Linkedin
+            </a>
+          </p>
+          <p>
+            <a
+              className="link link-accent"
+              target="_blank"
+              href="https://github.com/Prepsld/"
+            >
+              Github Repository
+            </a>
+          </p>
+        </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-2">Summary</h2>
+          <h2 className="text-2xl font-bold mb-2">Professional Summary</h2>
           <p>
-            I am a passionate and dedicated professional with a strong
-            background in the creative arts. Over the years, I have honed my
-            skills in various aspects of multimedia production, from graphic
-            design to video editing. Currently, I am a key member of the
-            Prowling Gryphon Studios team.
+            Aspiring game developer and software developer with a strong
+            foundation in programming and a passion for creating engaging
+            digital experiences.
           </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Education</h2>
+          <p>
+            SAIT - Southern Alberta Institute of Technology
+            <br />
+            Software Development Program
+            <br />
+            Expected Graduation: May 2024
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Skills</h2>
+          <ul className="list-disc ml-6">
+            <li>Programming Languages: [List of programming languages]</li>
+            <li>Web Development: [List of web development skills]</li>
+            <li>Database Management: [List of database skills]</li>
+            {/* Add more specific skills as needed */}
+          </ul>
         </section>
 
         <section>
@@ -29,7 +72,7 @@ export default function Resume() {
           <div>
             <h3 className="text-xl font-bold mb-1">Prowling Gryphon Studios</h3>
             <p className="italic text-gray-600">
-              Creative Director | 2020 - Present
+              Complete Sultan of the Studio (of one) | 2020 - Present
             </p>
             <ul className="list-disc ml-6">
               <li>
@@ -48,20 +91,6 @@ export default function Resume() {
 
           {/* Add more experience sections as needed */}
         </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-2">Education</h2>
-          <div>
-            <h3 className="text-xl font-bold mb-1">University Name</h3>
-            <p className="italic text-gray-600">
-              Bachelor of Arts in Multimedia Arts | Graduated 2018
-            </p>
-          </div>
-
-          {/* Add more education sections as needed */}
-        </section>
-
-        {/* Add more sections for skills, projects, certifications, etc. */}
       </div>
       <Blurb />
     </div>
