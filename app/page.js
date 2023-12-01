@@ -8,7 +8,6 @@ export default function HomePage() {
     <div className="prose container mx-auto max-w-screen-md">
       <h1 className="text-4xl font-bold mb-4"> PROWLING GRYPHON STUDIOS</h1>
       <Navigation />
-      <Blurb />
       <h1>Beauty requires exploration.</h1>
       <h2>
         Nothing is impossible. The world is aglow with electromagnetic forces.
@@ -22,6 +21,7 @@ export default function HomePage() {
         currently working on a project using Unity and C#.
       </p>
       <h3>Although you may not realize it, you are authentic.</h3>
+      <Blurb />
     </div>
   );
 }
