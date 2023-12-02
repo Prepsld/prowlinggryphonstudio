@@ -18,7 +18,7 @@ export default function AuthPage () {
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <p>This is a protected page.</p>
+      <p>This is a protected page. If you are seeing this, congrats! Youre trusted :D</p>
       <p>
         <button onClick={() => signOut({})}>Sign out</button>
       </p>
