@@ -1,7 +1,6 @@
 // pages/signup.js
 "use client";
 import { signIn } from "next-auth/react";
-
 export default function Signup() {
   
 
@@ -15,6 +14,7 @@ export default function Signup() {
     try {
       const result = await signIn("credentials", {
         ...user,
+        isSignup: true,
         callbackUrl: `/projects`,
       });
       console.log("Authentication result:", result);
@@ -24,10 +24,17 @@ export default function Signup() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="username" type="text" placeholder="Username" required />
-      <input name="password" type="password" placeholder="Password" required />
-      <button type="submit">Sign Up</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input name="username" type="text" placeholder="Username" required />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
   );
 }

@@ -28,8 +28,13 @@ export default function Projects() {
             </li>
             <li>
               <Link href="./projects/signup" className="btn btn-ghost text-xl">
-                School Project 2
+                Signup page (MongoDB test)
               </Link>
+            </li>
+            <li>
+              <Link href="./projects/signin" className="btn btn-ghost text-xl">
+                Signin page (MongoDB test)
+                </Link>
             </li>
             {/* Add more school projects as needed */}
           </ul>
