@@ -55,6 +55,10 @@ import CredentialsProvider from "next-auth/providers/credentials";
      // ...add more providers here
    ],
    adapter: MongoDBAdapter(clientPromise),
+   jwt: {
+     secret: process.env.NEXTAUTH_SECRET,
+     maxAge: 60 * 60 * 24 * 30, // 30 days
+   },
    session: {
      strategy: "jwt",
    },
