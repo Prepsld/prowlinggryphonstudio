@@ -6,11 +6,10 @@ import { signOut } from "next-auth/react";
 
 
 export default function AuthPage () {
-  const { data, status } = useSession({
+  const {status } = useSession({
     required: true,
   });
 
-  const user = data?.user;
 
   if (status === "loading") {
     return <>loading</>;
@@ -24,7 +23,7 @@ export default function AuthPage () {
         <button onClick={() => signOut({})}>Sign out</button>
       </p>
       <p>
-        {user?.name} ({user?.email} {user?.id}) {user?.username} {user?.password}
+        
       </p>
     </div>
   );

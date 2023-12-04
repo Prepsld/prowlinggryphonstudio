@@ -29,14 +29,18 @@ import CredentialsProvider from "next-auth/providers/credentials";
          const client = await clientPromise; // Get the MongoDB client
          const db = client.db(process.env.MONGODB_DB);
 
-         const existingUser = await db
-           .collection("users")
-           .findOne({ username: credentials.username });
+         const collection = await db.collection("users");
+         const existingUser = await collection.findOne({
+           username: credentials.username,
+         });
 
          if (existingUser) {
            if (existingUser.password === credentials.password) {
              // If the passwords match, return the user
-             return existingUser;
+             return {
+               id: existingUser._id.toString(),
+               ...existingUser,
+             };
            } else {
              // If the passwords don't match, throw an error
              throw new Error("Incorrect password");
@@ -54,7 +58,10 @@ import CredentialsProvider from "next-auth/providers/credentials";
      // ...add more providers here
    ],
    adapter: MongoDBAdapter(clientPromise),
+   session: {
+     strategy: "jwt",
+   },
  };
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST, handler as FETCH};
