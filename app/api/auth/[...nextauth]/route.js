@@ -7,7 +7,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 
 
-export const authOptions = {
+ const authOptions = {
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
