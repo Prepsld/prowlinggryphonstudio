@@ -27,7 +27,7 @@ export default function Projects() {
               </Link>
             </li>
             <li>
-              <Link href="/" className="btn btn-ghost text-xl">
+              <Link href="./projects/signup" className="btn btn-ghost text-xl">
                 School Project 2
               </Link>
             </li>
