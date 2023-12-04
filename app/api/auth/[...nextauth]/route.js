@@ -26,30 +26,33 @@ import CredentialsProvider from "next-auth/providers/credentials";
          password: { label: "Password", type: "password" },
        },
        async authorize(credentials) {
-         const client = await clientPromise; // Get the MongoDB client
-         const db = client.db(process.env.MONGODB_DB);
+         try {
+           const client = await clientPromise;
+           const db = client.db(process.env.MONGODB_DB);
 
-         const collection = await db.collection("users");
-         const existingUser = await collection.findOne({
-           username: credentials.username,
-         });
+           const collection = await db.collection("users");
+           const existingUser = await collection.findOne({
+             username: credentials.username,
+           });
 
-         if (existingUser) {
-           if (existingUser.password === credentials.password) {
-             // If the passwords match, return the user
-             return Promise.resolve(existingUser);
-           } else {
-             // If the passwords don't match, throw an error
-             throw new Error("Incorrect password");
+           if (existingUser) {
+             if (existingUser.password === credentials.password) {
+               return existingUser;
+             } else {
+               throw new Error("Incorrect password");
+             }
            }
+
+           const newUser = await collection.insertOne({
+             username: credentials.username,
+             password: credentials.password,
+           });
+
+           return newUser;
+         } catch (error) {
+           console.error("Error in authorize:", error);
+           throw new Error("Authentication failed");
          }
-
-         const newUser = await db.collection("users").insertOne({
-           username: credentials.username,
-           password: credentials.password,
-         });
-
-         return newUser;
        },
      }),
      // ...add more providers here
@@ -62,7 +65,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
    session: {
      strategy: "jwt",
    },
-   secret: process.env.NEXTAUTH_SECRET,
  };
 const handler = NextAuth(authOptions);
 
