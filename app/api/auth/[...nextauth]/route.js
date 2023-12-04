@@ -27,7 +27,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
       },
       async authorize(credentials) {
         const client = await clientPromise; // Get the MongoDB client
-        const db = client.db(process.env.MONGODB_DB);
+        const db = client.db(user);
 
         const existingUser = await db
           .collection("users")
