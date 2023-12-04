@@ -37,10 +37,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
          if (existingUser) {
            if (existingUser.password === credentials.password) {
              // If the passwords match, return the user
-             return {
-               id: existingUser._id.toString(),
-               ...existingUser,
-             };
+             return Promise.resolve(existingUser);
            } else {
              // If the passwords don't match, throw an error
              throw new Error("Incorrect password");
