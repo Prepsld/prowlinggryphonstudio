@@ -14,7 +14,6 @@ export default function Signup() {
     try {
       const result = await signIn("credentials", {
         ...user,
-        isSignup: true,
         callbackUrl: `/projects`,
       });
       console.log("Authentication result:", result);
