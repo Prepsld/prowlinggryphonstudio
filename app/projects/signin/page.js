@@ -2,12 +2,12 @@
 "use client";
 
 import { useState } from "react";
-import { getProviders, signIn, getCsrfToken } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import Navigation from "../../components/Navigation";
 import Blurb from "../../components/Blurb";
-import { redirect } from "next/dist/server/api-utils";
 
-export default function SignIn(providers) {
+
+export default function SignIn() {
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -29,7 +29,6 @@ export default function SignIn(providers) {
       await signIn("login", {redirect: false,
         username: credentials.username,
         password: credentials.password,
-        //callbackUrl: null,
       });
       // Show the modal upon successful sign-in
       setMessage("You have successfully signed in!");
@@ -45,7 +44,7 @@ export default function SignIn(providers) {
       await signIn("google", {
         redirect: false,
       });
-      setMessage("You have successfully signed in!");
+      setMessage("You have successfully signed in with Google!");
       setShowModal(true);
     } catch (error) {
       setMessage("Sign in failed. Please try again.");
@@ -59,7 +58,7 @@ export default function SignIn(providers) {
       await signIn("github", {
         redirect: false,
       });
-      setMessage("You have successfully signed in!");
+      setMessage("You have successfully signed in with Github!");
       setShowModal(true);
     } catch (error) {
       setMessage("Sign in failed. Please try again.");
@@ -71,8 +70,7 @@ export default function SignIn(providers) {
   const handleModalClose = () => {
     setShowModal(false);
     // Redirect the user after dismissing the modal
-    window.location.href =
-      "https://prowlinggryphonstudio.vercel.app/projects/auth";
+    
   };
 
   return (
@@ -114,17 +112,6 @@ export default function SignIn(providers) {
           Sign In
         </button>
       </form>
-      {providers &&
-        Object.values(providers).map((provider) => (
-          <div key={provider.name} style={{ marginBottom: 0 }}>
-            <button
-              className="btn btn-primary mr-2 justify-center display-flex"
-              onClick={() => signIn(provider.id, { redirect: false })}
-            >
-              Sign in with {provider.name}
-            </button>
-          </div>
-        ))}
       <div className="flex flex-row items-center justify-center mt-4">
         <button
           className="btn btn-primary mr-2 justify-center display-flex"
@@ -175,14 +162,4 @@ export default function SignIn(providers) {
       <Blurb />
     </div>
   );
-}
-export async function getServerSideProps(context) {
-  const providers = await getProviders();
-  const csrfToken = await getCsrfToken(context);
-  return {
-    props: {
-      providers,
-      csrfToken,
-    },
-  };
 }
