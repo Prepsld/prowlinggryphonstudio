@@ -19,7 +19,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
        clientSecret: process.env.GITHUB_SECRET,
      }),
      CredentialsProvider({
-       id: "loginCredentials",
+       id: "login",
        name: "MongoDB Login",
        credentials: {
          username: { label: "Username", type: "text ", placeholder: "jsmith" },
@@ -51,7 +51,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
        },
      }),
      CredentialsProvider({
-       id: "signupCredentials",
+       id: "signup",
        name: "MongoDB Signup",
        credentials: {
          username: { label: "Username", type: "text ", placeholder: "jsmith" },
