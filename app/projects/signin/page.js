@@ -12,6 +12,8 @@ export default function SignIn() {
     password: "",
   });
 
+  const [showModal, setShowModal] = useState(false);
+
   const handleChange = (e) => {
     setCredentials({
       ...credentials,
@@ -26,12 +28,21 @@ export default function SignIn() {
       await signIn("login", {
         username: credentials.username,
         password: credentials.password,
-        callbackUrl: "https://prowlinggryphonstudio.vercel.app/projects/auth",
+        callbackUrl: null,
       });
+      // Show the modal upon successful sign-in
+      setShowModal(true);
     } catch (error) {
       console.error("Sign in failed:", error);
       // Handle sign-in error, show a message to the user, etc.
     }
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+    // Redirect the user after dismissing the modal
+    window.location.href =
+      "https://prowlinggryphonstudio.vercel.app/projects/auth";
   };
 
   return (
@@ -97,6 +108,24 @@ export default function SignIn() {
           Sign in with GitHub
         </button>
       </div>
+
+      {/* DaisyUI Modal */}
+      {showModal && (
+        <dialog id="my_modal_1" className="modal" open>
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">Hello!</h3>
+            <p className="py-4">You are now logged in!</p>
+            <div className="modal-action">
+              <form method="dialog">
+                <button className="btn" onClick={handleModalClose}>
+                  Okay
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      )}
+
       <Blurb />
     </div>
   );
