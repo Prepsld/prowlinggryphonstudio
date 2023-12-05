@@ -24,7 +24,7 @@ export default function SignIn() {
       await signIn("credentials", {
         username: credentials.username,
         password: credentials.password,
-        callbackUrl: "http://localhost:3000/projects/auth" 
+        callbackUrl: "../projects/auth" 
       });
 
       // If the signIn is successful, you can redirect the user
@@ -64,7 +64,7 @@ export default function SignIn() {
       <button
         onClick={() =>
           signIn("google", {
-            callbackUrl: "http://localhost:3000/projects/auth",
+            callbackUrl: "../projects/auth",
           })
         }
       >
@@ -73,7 +73,7 @@ export default function SignIn() {
       <button
         onClick={() =>
           signIn("github", {
-            callbackUrl: "http://localhost:3000/projects/auth",
+            callbackUrl: "../projects/auth",
           })
         }
       >
