@@ -73,7 +73,7 @@ export default function SignIn() {
           Sign In
         </button>
       </form>
-      <div className=" justify-center mt-4">
+      <div className="flex flex-row items-center mt-4">
         <button
           className="btn btn-primary mr-2"
           onClick={() =>
