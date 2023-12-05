@@ -61,7 +61,7 @@ export default function Signup() {
           Sign Up
         </button>
       </form>
-      <Blurb text="By signing up, you agree to our terms and conditions." />
+      <Blurb />
     </div>
   );
 }

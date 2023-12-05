@@ -22,6 +22,7 @@ export default function AuthPage() {
       <p className="mb-4">
         This is a protected page. If you are seeing this, congrats! Successfully signed in! :D
       </p>
+      <p>From here you can either go to another page, OR you can sign out and try again with another provider!</p>
       <button
         className="btn btn-warning mt-4"
         onClick={() => signOut({})}

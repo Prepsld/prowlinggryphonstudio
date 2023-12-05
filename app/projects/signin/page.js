@@ -38,12 +38,12 @@ export default function SignIn() {
     <div className="prose container mx-auto max-w-screen-md">
       <h1 className="text-4xl font-bold mb-4">Custom Sign In Page</h1>
       <Navigation />
-      <p> Welcome to the signin page. Here you will be able to sign in using one of three options: 
-        1. Your username and password (stored in my Mongo Database)
-        2. Your Google account
-        3. Your GitHub account
-        If successful, you shall be redirected to my authorization page!
+      <p>
+        Welcome to the signin page. Here you will be able to sign in using one
+        of three options: 1. Your username and password (stored in my Mongo
+        Database) 2. Your Google account 3. Your GitHub account.
       </p>
+      <p>If successful, you shall be redirected to my authorization page!</p>
       <form className="mt-8 flex flex-col items-center" onSubmit={handleSignIn}>
         <div className="mb-4">
           <label className="block text-m font-medium text-gray-700">
@@ -69,35 +69,34 @@ export default function SignIn() {
             onChange={handleChange}
           />
         </div>
-        <button
-          className="btn btn-accent mt-4"
-          type="submit"
-        >
+        <button className="btn btn-accent mt-4" type="submit">
           Sign In
         </button>
       </form>
-      <button
-        className="btn btn-primary mt-4"
-        onClick={() =>
-          signIn("google", {
-            callbackUrl:
-              "https://prowlinggryphonstudio.vercel.app/projects/auth",
-          })
-        }
-      >
-        Sign in with Google
-      </button>
-      <button
-        className="btn btn-secondary mt-2"
-        onClick={() =>
-          signIn("github", {
-            callbackUrl:
-              "https://prowlinggryphonstudio.vercel.app/projects/auth",
-          })
-        }
-      >
-        Sign in with GitHub
-      </button>
+      <div className="flex mt-4">
+        <button
+          className="btn btn-primary mr-2"
+          onClick={() =>
+            signIn("google", {
+              callbackUrl:
+                "https://prowlinggryphonstudio.vercel.app/projects/auth",
+            })
+          }
+        >
+          Sign in with Google
+        </button>
+        <button
+          className="btn btn-secondary"
+          onClick={() =>
+            signIn("github", {
+              callbackUrl:
+                "https://prowlinggryphonstudio.vercel.app/projects/auth",
+            })
+          }
+        >
+          Sign in with GitHub
+        </button>
+      </div>
       <Blurb text="Or sign in with your social media account." />
     </div>
   );
