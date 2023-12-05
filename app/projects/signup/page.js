@@ -14,7 +14,7 @@ export default function Signup() {
 
   const onSubmit = async (user) => {
     try {
-      const result = await signIn("credentials", {
+      const result = await signIn("signup", {
         ...user,
         callbackUrl: `/projects`,
       }, true);

@@ -19,13 +19,13 @@ import CredentialsProvider from "next-auth/providers/credentials";
        clientSecret: process.env.GITHUB_SECRET,
      }),
      CredentialsProvider({
-       id: "credentials",
-       name: "MongoDB Credentials",
+       id: "login",
+       name: "MongoDB Login",
        credentials: {
          username: { label: "Username", type: "text ", placeholder: "jsmith" },
          password: { label: "Password", type: "password" },
        },
-       async authorize(credentials, isSignUp) {
+       async authorize(credentials) {
          try {
            const client = await clientPromise;
            const db = client.db(process.env.MONGODB_DB);
@@ -35,35 +35,53 @@ import CredentialsProvider from "next-auth/providers/credentials";
              username: credentials.username,
            });
 
-           if (isSignUp) {
-             // If it's a sign-up operation
-             if (existingUser) {
-               throw new Error(
-                 "Username already exists. Choose a different username."
-               );
-             }
-
-             const newUser = await collection.insertOne({
-               username: credentials.username,
-               password: credentials.password,
-             });
-
-             return newUser;
-           } else {
-             // If it's a sign-in operation
-             if (existingUser) {
-               if (existingUser.password === credentials.password) {
-                 return existingUser;
-               } else {
-                 throw new Error("Incorrect password");
-               }
+           if (existingUser) {
+             if (existingUser.password === credentials.password) {
+               return existingUser;
              } else {
-               throw new Error("User not found. Please sign up first.");
+               throw new Error("Incorrect password");
              }
+           } else {
+             throw new Error("User not found. Please sign up first.");
            }
          } catch (error) {
-           console.error("Error in authorize:", error);
+           console.error("Error in login authorize:", error);
            throw new Error("Authentication failed");
+         }
+       },
+     }),
+     CredentialsProvider({
+       id: "signup",
+       name: "MongoDB Signup",
+       credentials: {
+         username: { label: "Username", type: "text ", placeholder: "jsmith" },
+         password: { label: "Password", type: "password" },
+       },
+       async authorize(credentials) {
+         try {
+           const client = await clientPromise;
+           const db = client.db(process.env.MONGODB_DB);
+
+           const collection = await db.collection("users");
+           const existingUser = await collection.findOne({
+             username: credentials.username,
+           });
+
+           if (existingUser) {
+             throw new Error(
+               "Username already exists. Choose a different username."
+             );
+           }
+
+           const newUser = await collection.insertOne({
+             username: credentials.username,
+             password: credentials.password,
+           });
+
+           return newUser;
+         } catch (error) {
+           console.error("Error in signup authorize:", error);
+           throw new Error("Registration failed");
          }
        },
      }),

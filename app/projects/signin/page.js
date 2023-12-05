@@ -23,7 +23,7 @@ export default function SignIn() {
     e.preventDefault();
 
     try {
-      await signIn("credentials", {
+      await signIn("signin", {
         username: credentials.username,
         password: credentials.password,
         callbackUrl: "https://prowlinggryphonstudio.vercel.app/projects/auth",
