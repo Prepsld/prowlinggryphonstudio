@@ -2,7 +2,7 @@
 "use client";
 import Navigation from "./components/Navigation";
 import Blurb from "./components/Blurb";
-import signOutButton from "./components/signoutbtn";
+import SignOutButton from "./components/signoutbtn";
 
 
 export default function HomePage() {
@@ -23,7 +23,7 @@ export default function HomePage() {
         currently working on a project using Unity and C#.
       </p>
       <h3>Although you may not realize it, you are authentic.</h3>
-      <signOutButton />
+      <SignOutButton />
       <Blurb />
     </div>
   );

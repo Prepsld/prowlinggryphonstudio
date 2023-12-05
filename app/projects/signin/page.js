@@ -25,7 +25,7 @@ export default function SignIn() {
     e.preventDefault();
 
     try {
-      await signIn("login", {
+      await signIn("login", {redirect: false,
         username: credentials.username,
         password: credentials.password,
         //callbackUrl: null,
@@ -35,6 +35,29 @@ export default function SignIn() {
     } catch (error) {
       console.error("Sign in failed:", error);
       // Handle sign-in error, show a message to the user, etc.
+    }
+  };
+  const handleGoogleSignIn = async () => {
+    try {
+      await signIn("google", {
+        redirect: false,
+      });
+      setShowModal(true);
+    } catch (error) {
+      console.error("Google sign in failed:", error);
+      // Handle Google sign-in error
+    }
+  };
+
+  const handleGitHubSignIn = async () => {
+    try {
+      await signIn("github", {
+        redirect: false,
+      });
+      setShowModal(true);
+    } catch (error) {
+      console.error("GitHub sign in failed:", error);
+      // Handle GitHub sign-in error
     }
   };
 
@@ -87,23 +110,28 @@ export default function SignIn() {
       <div className="flex flex-row items-center justify-center mt-4">
         <button
           className="btn btn-primary mr-2 justify-center display-flex"
-          onClick={() =>
-            signIn("google", {
+          onClick={handleGoogleSignIn}
+          //onClick={() =>
+            //signIn("google", {
+             //redirect: false,
+
               //callbackUrl:
-               // "https://prowlinggryphonstudio.vercel.app/projects/auth",
-            })
-          }
+              // "https://prowlinggryphonstudio.vercel.app/projects/auth",
+           // })
+          //}
         >
           Sign in with Google
         </button>
         <button
           className="btn btn-secondary justify-center display-flex"
-          onClick={() =>
-            signIn("github", {
-             // callbackUrl:
-               // "https://prowlinggryphonstudio.vercel.app/projects/auth",
-            })
-          }
+          onClick={handleGitHubSignIn}
+          //onClick={() =>
+            //signIn("github", {
+              //redirect: false,
+              // callbackUrl:
+              // "https://prowlinggryphonstudio.vercel.app/projects/auth",
+            //</div></div>})
+          //}
         >
           Sign in with GitHub
         </button>
