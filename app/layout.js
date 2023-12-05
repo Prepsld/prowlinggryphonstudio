@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="retro">
+    <html lang="en" data-theme="business">
       <body className={inter.className}>
         <AuthProvider>{children}</AuthProvider>
       </body>
