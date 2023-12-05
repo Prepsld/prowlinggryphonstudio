@@ -23,11 +23,11 @@ export default function SignIn() {
     e.preventDefault();
 
     try {
-      await signIn("signin", {
+      await signIn("login", {
         username: credentials.username,
         password: credentials.password,
         callbackUrl: "https://prowlinggryphonstudio.vercel.app/projects/auth",
-      }, false);
+      });
     } catch (error) {
       console.error("Sign in failed:", error);
       // Handle sign-in error, show a message to the user, etc.
