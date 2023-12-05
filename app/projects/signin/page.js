@@ -73,10 +73,9 @@ export default function SignIn() {
           Sign In
         </button>
       </form>
-      <div className="flex flex-row items-center mt-4">
+      <div className="flex flex-row items-center justify-center mt-4">
         <button
-          className="btn btn-primary mr-2 display: flex;
-  justify-content: center;"
+          className="btn btn-primary mr-2 justify-center display-flex"
           onClick={() =>
             signIn("google", {
               callbackUrl:
@@ -87,8 +86,7 @@ export default function SignIn() {
           Sign in with Google
         </button>
         <button
-          className="btn btn-secondary display: flex;
-  justify-content: center;"
+          className="btn btn-secondary justify-center display-flex"
           onClick={() =>
             signIn("github", {
               callbackUrl:
