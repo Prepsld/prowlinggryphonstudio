@@ -176,3 +176,13 @@ export default function SignIn(providers) {
     </div>
   );
 }
+export async function getServerSideProps(context) {
+  const providers = await getProviders();
+  const csrfToken = await getCsrfToken(context);
+  return {
+    props: {
+      providers,
+      csrfToken,
+    },
+  };
+}
