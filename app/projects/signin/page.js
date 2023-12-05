@@ -73,7 +73,7 @@ export default function SignIn() {
           Sign In
         </button>
       </form>
-      <div className="flex mt-4">
+      <div className="flex items-center mt-4">
         <button
           className="btn btn-primary mr-2"
           onClick={() =>
@@ -97,7 +97,7 @@ export default function SignIn() {
           Sign in with GitHub
         </button>
       </div>
-      <Blurb text="Or sign in with your social media account." />
+      <Blurb />
     </div>
   );
 }
