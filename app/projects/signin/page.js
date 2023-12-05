@@ -11,7 +11,7 @@ export default function SignIn() {
     username: "",
     password: "",
   });
-
+  const [errorMessage, setErrorMessage] = useState(""); // State variable for error message
   const handleChange = (e) => {
     setCredentials({
       ...credentials,
@@ -23,14 +23,18 @@ export default function SignIn() {
     e.preventDefault();
 
     try {
-      await signIn("signin", {
-        username: credentials.username,
-        password: credentials.password,
-        callbackUrl: "https://prowlinggryphonstudio.vercel.app/projects/auth",
-      }, false);
+      await signIn(
+        "signin",
+        {
+          username: credentials.username,
+          password: credentials.password,
+          callbackUrl: "https://prowlinggryphonstudio.vercel.app/projects/auth",
+        },
+        false
+      );
     } catch (error) {
       console.error("Sign in failed:", error);
-      // Handle sign-in error, show a message to the user, etc.
+      setErrorMessage("Invalid username or password"); // Set the error message
     }
   };
 
@@ -44,6 +48,8 @@ export default function SignIn() {
         Database) 2. Your Google account 3. Your GitHub account.
       </p>
       <p>If successful, you shall be redirected to my authorization page!</p>
+      {/* Render error message if it exists */}
+      {errorMessage && <div className="text-red-500 mb-4">{errorMessage}</div>}
       <form className="mt-8 flex flex-col items-center" onSubmit={handleSignIn}>
         <div className="mb-4">
           <label className="block text-m font-medium text-gray-700">

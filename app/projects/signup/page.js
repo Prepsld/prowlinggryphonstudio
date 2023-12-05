@@ -5,22 +5,29 @@ import Navigation from "../../components/Navigation";
 import Blurb from "../../components/Blurb";
 
 export default function Signup() {
-  const handleSubmit = (event) => {
+  const [errorMessage, setErrorMessage] = useState(""); // State variable for error message
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const username = event.target.elements.username.value;
     const password = event.target.elements.password.value;
-    onSubmit({ username, password });
-  };
 
-  const onSubmit = async (user) => {
     try {
-      const result = await signIn("signup", {
-        ...user,
-        callbackUrl: `/projects`,
-      }, true);
+      const result = await signIn(
+        "signup",
+        {
+          username,
+          password,
+          callbackUrl: "/projects",
+        },
+        true
+      );
       console.log("Authentication result:", result);
     } catch (error) {
       console.error("Authentication error:", error);
+      setErrorMessage(
+        "Username already exists. Please choose a different username."
+      ); // Set the error message
     }
   };
 
@@ -30,8 +37,11 @@ export default function Signup() {
       <Navigation />
       <p>
         This is a simple signup page that will allow you to create a
-        user/password combo in my Mongo Database. If the creation was successful, you will be redirected to the homepage!
+        user/password combo in my Mongo Database. If the creation was
+        successful, you will be redirected to the homepage!
       </p>
+      {/* Render error message if it exists */}
+      {errorMessage && <div className="text-red-500 mb-4">{errorMessage}</div>}
       <form className="mt-8 flex flex-col items-center" onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-md font-medium text-gray-700">
