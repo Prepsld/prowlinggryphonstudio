@@ -17,7 +17,7 @@ export default function Signup() {
       const result = await signIn("credentials", {
         ...user,
         callbackUrl: `/projects`,
-      });
+      }, true);
       console.log("Authentication result:", result);
     } catch (error) {
       console.error("Authentication error:", error);

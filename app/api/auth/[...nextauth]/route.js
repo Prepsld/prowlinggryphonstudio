@@ -25,7 +25,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
          username: { label: "Username", type: "text ", placeholder: "jsmith" },
          password: { label: "Password", type: "password" },
        },
-       async authorize(credentials) {
+       async authorize(credentials, isSignUp) {
          try {
            const client = await clientPromise;
            const db = client.db(process.env.MONGODB_DB);
@@ -35,14 +35,31 @@ import CredentialsProvider from "next-auth/providers/credentials";
              username: credentials.username,
            });
 
-           if (!existingUser) {
-             throw new Error("User not found");
-           }
+           if (isSignUp) {
+             // If it's a sign-up operation
+             if (existingUser) {
+               throw new Error(
+                 "Username already exists. Choose a different username."
+               );
+             }
 
-           if (existingUser.password === credentials.password) {
-             return existingUser;
+             const newUser = await collection.insertOne({
+               username: credentials.username,
+               password: credentials.password,
+             });
+
+             return newUser;
            } else {
-             throw new Error("Incorrect password");
+             // If it's a sign-in operation
+             if (existingUser) {
+               if (existingUser.password === credentials.password) {
+                 return existingUser;
+               } else {
+                 throw new Error("Incorrect password");
+               }
+             } else {
+               throw new Error("User not found. Please sign up first.");
+             }
            }
          } catch (error) {
            console.error("Error in authorize:", error);
