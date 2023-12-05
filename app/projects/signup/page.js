@@ -3,6 +3,8 @@
 import { signIn } from "next-auth/react";
 import Navigation from "../../components/Navigation";
 import Blurb from "../../components/Blurb";
+import { useState } from "react";
+
 
 export default function Signup() {
   const [errorMessage, setErrorMessage] = useState(""); // State variable for error message
