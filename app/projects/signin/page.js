@@ -2,16 +2,17 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { getProviders, signIn } from "next-auth/react";
 import Navigation from "../../components/Navigation";
 import Blurb from "../../components/Blurb";
+import { redirect } from "next/dist/server/api-utils";
 
-export default function SignIn() {
+export default function SignIn(providers) {
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
   });
-
+  const [message, setMessage] = useState("You have successfully signed in!");
   const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
@@ -31,8 +32,10 @@ export default function SignIn() {
         //callbackUrl: null,
       });
       // Show the modal upon successful sign-in
+      setMessage("You have successfully signed in!");
       setShowModal(true);
     } catch (error) {
+      setMessage("Sign in failed. Please try again.");
       console.error("Sign in failed:", error);
       // Handle sign-in error, show a message to the user, etc.
     }
@@ -42,8 +45,10 @@ export default function SignIn() {
       await signIn("google", {
         redirect: false,
       });
+      setMessage("You have successfully signed in!");
       setShowModal(true);
     } catch (error) {
+      setMessage("Sign in failed. Please try again.");
       console.error("Google sign in failed:", error);
       // Handle Google sign-in error
     }
@@ -54,8 +59,10 @@ export default function SignIn() {
       await signIn("github", {
         redirect: false,
       });
+      setMessage("You have successfully signed in!");
       setShowModal(true);
     } catch (error) {
+      setMessage("Sign in failed. Please try again.");
       console.error("GitHub sign in failed:", error);
       // Handle GitHub sign-in error
     }
@@ -107,17 +114,28 @@ export default function SignIn() {
           Sign In
         </button>
       </form>
+      {providers &&
+        Object.values(providers).map((provider) => (
+          <div key={provider.name} style={{ marginBottom: 0 }}>
+            <button
+              className="btn btn-primary mr-2 justify-center display-flex"
+              onClick={() => signIn(provider.id, { redirect: false })}
+            >
+              Sign in with {provider.name}
+            </button>
+          </div>
+        ))}
       <div className="flex flex-row items-center justify-center mt-4">
         <button
           className="btn btn-primary mr-2 justify-center display-flex"
           onClick={handleGoogleSignIn}
           //onClick={() =>
-            //signIn("google", {
-             //redirect: false,
+          //signIn("google", {
+          //redirect: false,
 
-              //callbackUrl:
-              // "https://prowlinggryphonstudio.vercel.app/projects/auth",
-           // })
+          //callbackUrl:
+          // "https://prowlinggryphonstudio.vercel.app/projects/auth",
+          // })
           //}
         >
           Sign in with Google
@@ -126,11 +144,11 @@ export default function SignIn() {
           className="btn btn-secondary justify-center display-flex"
           onClick={handleGitHubSignIn}
           //onClick={() =>
-            //signIn("github", {
-              //redirect: false,
-              // callbackUrl:
-              // "https://prowlinggryphonstudio.vercel.app/projects/auth",
-            //</div></div>})
+          //signIn("github", {
+          //redirect: false,
+          // callbackUrl:
+          // "https://prowlinggryphonstudio.vercel.app/projects/auth",
+          //</div></div>})
           //}
         >
           Sign in with GitHub
@@ -142,7 +160,7 @@ export default function SignIn() {
         <dialog id="my_modal_1" className="modal" open>
           <div className="modal-box">
             <h3 className="font-bold text-lg">Hello!</h3>
-            <p className="py-4">You are now logged in!</p>
+            <p className="py-4">{message}</p>
             <div className="modal-action">
               <form method="dialog">
                 <button className="btn" onClick={handleModalClose}>
