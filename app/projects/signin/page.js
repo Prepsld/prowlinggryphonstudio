@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { getProviders, signIn } from "next-auth/react";
+import { getProviders, signIn, getCsrfToken } from "next-auth/react";
 import Navigation from "../../components/Navigation";
 import Blurb from "../../components/Blurb";
 import { redirect } from "next/dist/server/api-utils";
