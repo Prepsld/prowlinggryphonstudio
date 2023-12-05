@@ -70,7 +70,8 @@ export default function SignIn() {
   const handleModalClose = () => {
     setShowModal(false);
     // Redirect the user after dismissing the modal
-    
+    window.location.href =
+      "https://prowlinggryphonstudio.vercel.app/projects/auth";
   };
 
   return (
@@ -114,7 +115,7 @@ export default function SignIn() {
       </form>
       <div className="flex flex-row items-center justify-center mt-4">
         <button
-          className="btn btn-primary mr-2 justify-center display-flex"
+          className="btn btn-primary mr-2 justify-center display-flex" 
           onClick={handleGoogleSignIn}
           //onClick={() =>
           //signIn("google", {
@@ -128,7 +129,7 @@ export default function SignIn() {
           Sign in with Google
         </button>
         <button
-          className="btn btn-secondary justify-center display-flex"
+          className="btn btn-secondary justify-center display-flex" 
           onClick={handleGitHubSignIn}
           //onClick={() =>
           //signIn("github", {
