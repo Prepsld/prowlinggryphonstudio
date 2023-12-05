@@ -12,7 +12,20 @@ export default function AuthPage() {
   });
 
   if (status === "loading") {
-    return <>loading</>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          fontSize: "2rem",
+        }}
+      >
+        <span className="loading loading-spinner loading-lg"></span>
+        Loading...
+      </div>
+    );
   }
 
   return (
