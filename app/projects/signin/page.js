@@ -28,7 +28,7 @@ export default function SignIn() {
       await signIn("login", {
         username: credentials.username,
         password: credentials.password,
-        callbackUrl: null,
+        //callbackUrl: null,
       });
       // Show the modal upon successful sign-in
       setShowModal(true);
@@ -89,8 +89,8 @@ export default function SignIn() {
           className="btn btn-primary mr-2 justify-center display-flex"
           onClick={() =>
             signIn("google", {
-              callbackUrl:
-                "https://prowlinggryphonstudio.vercel.app/projects/auth",
+              //callbackUrl:
+               // "https://prowlinggryphonstudio.vercel.app/projects/auth",
             })
           }
         >
@@ -100,8 +100,8 @@ export default function SignIn() {
           className="btn btn-secondary justify-center display-flex"
           onClick={() =>
             signIn("github", {
-              callbackUrl:
-                "https://prowlinggryphonstudio.vercel.app/projects/auth",
+             // callbackUrl:
+               // "https://prowlinggryphonstudio.vercel.app/projects/auth",
             })
           }
         >
