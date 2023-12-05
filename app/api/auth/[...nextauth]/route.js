@@ -35,20 +35,15 @@ import CredentialsProvider from "next-auth/providers/credentials";
              username: credentials.username,
            });
 
-           if (existingUser) {
-             if (existingUser.password === credentials.password) {
-               return existingUser;
-             } else {
-               throw new Error("Incorrect password");
-             }
+           if (!existingUser) {
+             throw new Error("User not found");
            }
 
-           const newUser = await collection.insertOne({
-             username: credentials.username,
-             password: credentials.password,
-           });
-
-           return newUser;
+           if (existingUser.password === credentials.password) {
+             return existingUser;
+           } else {
+             throw new Error("Incorrect password");
+           }
          } catch (error) {
            console.error("Error in authorize:", error);
            throw new Error("Authentication failed");
