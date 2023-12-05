@@ -40,6 +40,7 @@ module.exports = {
     },
     "retro",
     "business",
+    "cupcake"
     ],
   },
 }
