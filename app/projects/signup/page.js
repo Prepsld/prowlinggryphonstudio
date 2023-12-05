@@ -26,10 +26,8 @@ export default function Signup() {
       );
       console.log("Authentication result:", result);
     } catch (error) {
-      console.error("Authentication error:", error);
-      setErrorMessage(
-        "Username already exists. Please choose a different username."
-      ); // Set the error message
+      const { message } = await error.response.json();
+      setErrorMessage(message);
     }
   };
 
@@ -43,7 +41,11 @@ export default function Signup() {
         successful, you will be redirected to the homepage!
       </p>
       {/* Render error message if it exists */}
-      {errorMessage && <div className="text-red-500 mb-4">{errorMessage}</div>}
+      {errorMessage && (
+        <div className="text-red-500 mb-4">
+          <p>{errorMessage}</p>
+        </div>
+      )}
       <form className="mt-8 flex flex-col items-center" onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-md font-medium text-gray-700">

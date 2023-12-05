@@ -33,8 +33,8 @@ export default function SignIn() {
         false
       );
     } catch (error) {
-      console.error("Sign in failed:", error);
-      setErrorMessage("Invalid username or password"); // Set the error message
+      const { message } = await error.response.json();
+      setErrorMessage(message);
     }
   };
 
@@ -49,7 +49,11 @@ export default function SignIn() {
       </p>
       <p>If successful, you shall be redirected to my authorization page!</p>
       {/* Render error message if it exists */}
-      {errorMessage && <div className="text-red-500 mb-4">{errorMessage}</div>}
+      {errorMessage && (
+        <div className="text-red-500 mb-4">
+          <p>{errorMessage}</p>
+        </div>
+      )}
       <form className="mt-8 flex flex-col items-center" onSubmit={handleSignIn}>
         <div className="mb-4">
           <label className="block text-m font-medium text-gray-700">

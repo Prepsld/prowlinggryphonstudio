@@ -68,10 +68,12 @@ import CredentialsProvider from "next-auth/providers/credentials";
            });
 
            if (existingUser) {
-             throw new Error(
-               "Username already exists. Choose a different username."
-             );
+             const errorMessage =
+               "Username already exists. Choose a different username.";
+             console.error(errorMessage);
+             throw new Error(errorMessage);
            }
+           
 
            const newUser = await collection.insertOne({
              username: credentials.username,
@@ -98,6 +100,31 @@ import CredentialsProvider from "next-auth/providers/credentials";
    pages: {
      signIn: "/projects/signin", // specify the path to your custom sign-in page
    },
+   
+     callbacks: {
+       async onError(error, request, response) {
+         // Custom logic for handling errors
+         if (error.message === "User not found. Please sign up first.") {
+           // Handle case where user is not found
+           response
+             .status(400)
+             .json({ error: "User not found. Please sign up first." });
+         } else if (error.message === "Incorrect password") {
+           // Handle case where password is incorrect
+           response.status(400).json({ error: "Incorrect password" });
+         } else if (
+           error.message === "Username already exists. Choose a different username."
+         ) {
+           // Handle case where username already exists
+           response
+             .status(400)
+             .json({ error: "Username already exists. Choose a different username." });
+         } else {
+           // Handle other errors
+           response.status(400).json({ error: "An error occurred" });
+         }
+       },
+     },
  };
 const handler = NextAuth(authOptions);
 
