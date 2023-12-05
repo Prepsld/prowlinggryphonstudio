@@ -24,7 +24,7 @@ export default function SignIn() {
       await signIn("credentials", {
         username: credentials.username,
         password: credentials.password,
-        callbackUrl: "../projects/auth" 
+        callbackUrl: "https://prowlinggryphonstudio.vercel.app/projects/auth",
       });
 
       // If the signIn is successful, you can redirect the user
@@ -64,7 +64,8 @@ export default function SignIn() {
       <button
         onClick={() =>
           signIn("google", {
-            callbackUrl: "../projects/auth",
+            callbackUrl:
+              "https://prowlinggryphonstudio.vercel.app/projects/auth",
           })
         }
       >
@@ -73,7 +74,8 @@ export default function SignIn() {
       <button
         onClick={() =>
           signIn("github", {
-            callbackUrl: "../projects/auth",
+            callbackUrl:
+              "https://prowlinggryphonstudio.vercel.app/projects/auth",
           })
         }
       >
