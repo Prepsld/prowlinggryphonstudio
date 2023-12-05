@@ -65,6 +65,9 @@ import CredentialsProvider from "next-auth/providers/credentials";
    session: {
      strategy: "jwt",
    },
+   pages: {
+     signIn: "/projects/signin", // specify the path to your custom sign-in page
+   },
  };
 const handler = NextAuth(authOptions);
 

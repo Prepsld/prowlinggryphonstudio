@@ -5,7 +5,6 @@ import Navigation from "../components/Navigation";
 import Blurb from "../components/Blurb";
 import Link from "next/link";
 
-
 export default function Projects() {
   return (
     <div className="prose container mx-auto max-w-screen-md ">
@@ -20,22 +19,49 @@ export default function Projects() {
 
         <section>
           <h2 className="text-2xl font-bold mb-2">School Projects</h2>
+
           <ul>
             <li>
-              <Link href="./projects/auth" className="btn btn-ghost text-xl">
-                Authorization and Authentication Test
-              </Link>
+              <div className="collapse bg-base-200">
+                <input type="checkbox" />
+                <div className="collapse-title text-xl font-medium">
+                  Authorization and Authentication Test
+                </div>
+                <div className="collapse-content">
+                  <p>
+                    This is my simple implementation of using nextAuth to create
+                    a sign in form.
+                  </p>
+                  <Link
+                    href="./projects/auth"
+                    className="btn btn-ghost text-xl"
+                  >
+                    Click here to test my sign in page!
+                  </Link>
+                </div>
+              </div>
             </li>
             <li>
-              <Link href="./projects/signup" className="btn btn-ghost text-xl">
-                Signup page (MongoDB test)
-              </Link>
+              <div className="collapse bg-base-200">
+                <input type="checkbox" />
+                <div className="collapse-title text-xl font-medium">
+                  Signup page (MongoDB test)
+                </div>
+                <div className="collapse-content">
+                  <p>
+                    Utilizing MongoDB, this is my simple implementation of a
+                    sign up form. Create a username and password to test it out!
+                  </p>
+                  <Link
+                    href="./projects/signup"
+                    className="btn btn-ghost text-xl"
+                  >
+                    Dont use your real password!
+                  </Link>
+                </div>
+              </div>
             </li>
-            <li>
-              <Link href="./projects/signin" className="btn btn-ghost text-xl">
-                Signin page (MongoDB test)
-                </Link>
-            </li>
+
             {/* Add more school projects as needed */}
           </ul>
         </section>
