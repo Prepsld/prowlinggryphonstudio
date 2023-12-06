@@ -11,6 +11,7 @@ const Navigation = () => {
             Home Page
           </Link>
         </div>
+
         <div className="space-x-1">
           <Link href="/projects" className="btn btn-ghost text-xl">
             Projects
@@ -18,9 +19,9 @@ const Navigation = () => {
           <Link href="/resume" className="btn btn-ghost text-xl">
             Resume
           </Link>
-          <SignOutButton />
           {/* Add more links as needed */}
         </div>
+        <SignOutButton />
       </div>
     </nav>
   );

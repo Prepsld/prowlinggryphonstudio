@@ -70,8 +70,8 @@ export default function SignIn() {
   const handleModalClose = () => {
     setShowModal(false);
     // Redirect the user after dismissing the modal
-    window.location.href =
-      "https://prowlinggryphonstudio.vercel.app/projects/auth";
+    //window.location.href =
+    //  "https://prowlinggryphonstudio.vercel.app/projects/auth";
   };
 
   return (

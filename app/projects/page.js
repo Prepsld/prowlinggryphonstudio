@@ -61,6 +61,27 @@ export default function Projects() {
                 </div>
               </div>
             </li>
+            <li>
+              <div className="collapse bg-base-200">
+                <input type="checkbox" />
+                <div className="collapse-title text-xl font-medium">
+                  Signin page ( custom test)
+                </div>
+                <div className="collapse-content">
+                  <p>
+                    This is my attempt at combining both a login and protected page together. As well, I wanted to fix
+                    my issues with the sign in page not redirecting properly.In this test, I have a custom sign in page that 
+                    allows you to sign in with a username and password, or with your google account. If you are successful, you will be redirected to the same page, and clicking the modal with give you the authorized page!
+                  </p>
+                  <Link
+                    href="./projects/sigintest"
+                    className="btn btn-ghost text-xl"
+                  >
+                    Try me out, I worked hard on this!
+                  </Link>
+                </div>
+              </div>
+            </li>
 
             {/* Add more school projects as needed */}
           </ul>

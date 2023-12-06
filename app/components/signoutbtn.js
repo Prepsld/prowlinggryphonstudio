@@ -14,7 +14,7 @@ export default function SignOutButton() {
   };
 
   return (
-    <button className="btn btn-warning" onClick={handleSignOut}>
+    <button className="btn btn-warning btn-xs" onClick={handleSignOut}>
       Sign out!
     </button>
   );
