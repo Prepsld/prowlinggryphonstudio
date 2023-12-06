@@ -115,7 +115,7 @@ export default function SignIn() {
       </form>
       <div className="flex flex-row items-center justify-center mt-4">
         <button
-          className="btn btn-primary mr-2 justify-center display-flex" 
+          className="btn btn-primary mr-2 justify-center display-flex"
           onClick={handleGoogleSignIn}
           //onClick={() =>
           //signIn("google", {

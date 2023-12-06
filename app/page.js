@@ -23,7 +23,6 @@ export default function HomePage() {
         currently working on a project using Unity and C#.
       </p>
       <h3>Although you may not realize it, you are authentic.</h3>
-      <SignOutButton />
       <Blurb />
     </div>
   );
