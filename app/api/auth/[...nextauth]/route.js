@@ -4,7 +4,7 @@ import GitHubProvider from "next-auth/providers/github";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "../../../lib/mongodb";
 import CredentialsProvider from "next-auth/providers/credentials";
-
+import {hash, compare} from "bcrypt";
 
 
  const authOptions = {
@@ -13,7 +13,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
      GoogleProvider({
        clientId: process.env.GOOGLE_CLIENT_ID,
        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-       
      }),
      GitHubProvider({
        clientId: process.env.GITHUB_ID,
@@ -37,7 +36,13 @@ import CredentialsProvider from "next-auth/providers/credentials";
            });
 
            if (existingUser) {
-             if (existingUser.password === credentials.password) {
+             // Compare the provided password with the stored hashed password
+             const passwordMatch = await compare(
+               credentials.password,
+               existingUser.password
+             );
+
+             if (passwordMatch) {
                return existingUser;
              } else {
                throw new Error("Incorrect password");
@@ -74,9 +79,12 @@ import CredentialsProvider from "next-auth/providers/credentials";
              );
            }
 
+           // Hash the password before storing it in the database
+           const hashedPassword = await hash(credentials.password, 10);
+
            const newUser = await collection.insertOne({
              username: credentials.username,
-             password: credentials.password,
+             password: hashedPassword,
            });
 
            return newUser;
