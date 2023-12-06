@@ -1,8 +1,21 @@
 // components/Navigation.js
-import React from 'react';
+import { React } from 'react';
 import Link from 'next/link';
 import SignOutButton from './signoutbtn';
+import { themeChange } from "theme-change";
+import { useEffect } from "react";
+
+
+
 const Navigation = () => {
+  /*Initialize under useEffect */
+
+  useEffect(() => {
+    themeChange(false);
+  }, []);
+
+
+
   return (
     <nav className="navbar bg-base-300">
       <div className="container mx-auto flex items-center justify-between">
@@ -11,7 +24,6 @@ const Navigation = () => {
             Home Page
           </Link>
         </div>
-
         <div className="space-x-1">
           <Link href="/projects" className="btn btn-ghost text-xl">
             Projects
@@ -23,6 +35,13 @@ const Navigation = () => {
         </div>
         <SignOutButton />
       </div>
+      <select className="gradientselect" data-choose-theme>
+        <option disabled value="">
+          Pick a theme
+        </option>
+        <option value="business">Dark</option>
+        <option value="cupcake">Light</option>
+      </select>
     </nav>
   );
 };

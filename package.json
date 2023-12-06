@@ -15,7 +15,8 @@
     "next": "13.5.4",
     "next-auth": "^4.24.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "theme-change": "^2.5.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
