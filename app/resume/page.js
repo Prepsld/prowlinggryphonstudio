@@ -63,6 +63,7 @@ export default function Resume() {
         <section>
           <h2 className="text-2xl font-bold mb-2">Skills</h2>
           <ul className="list-disc ml-6">
+            {/* Technical Skills */}
             <li>
               <span className="font-bold">Programming Languages:</span> C
               (Beginner), Python (Beginner), C# (Intermediate), Java
@@ -79,8 +80,46 @@ export default function Resume() {
               (Intermediate), MySQL (Intermediate), NoSQL (Beginner), MongoDB
               (Beginner), Firebase (Beginner)
             </li>
-            {/* Add more specific skills as needed */}
+            {/* Soft Skills */}
+            <li>
+              <span className="font-bold">Soft Skills:</span> Problem-Solving,
+              Teamwork, Communication, Adaptability, Time Management, Attention
+              to Detail, Creativity, Critical Thinking, Leadership,
+              Self-Motivation
+            </li>
           </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Projects</h2>
+          <div>
+            <h3 className="text-xl font-bold mb-1">Portfolio Website</h3>
+            <p className="italic text-gray-600">
+              Full-Stack Developer | 2022 - Present
+            </p>
+            <ul className="list-disc ml-6">
+              <li>
+                Conceptualized and developed a personal portfolio website to
+                showcase skills, projects, and educational background.
+              </li>
+              <li>
+                Implemented responsive design using HTML, CSS, and JavaScript to
+                ensure optimal viewing on various devices.
+              </li>
+              <li>
+                Utilized React.js and Next.js for a dynamic and efficient user
+                experience.
+              </li>
+              <li>
+                Integrated with external data sources and APIs to display live
+                data or project information.
+              </li>
+              <li>
+                Demonstrated proficiency in front-end and back-end technologies,
+                including Node.js and MongoDB.
+              </li>
+            </ul>
+          </div>
         </section>
 
         <section>
@@ -108,7 +147,8 @@ export default function Resume() {
                 promote the non-existent brand.
               </li>
               <li>
-                Created a completely real website to showcase the non-existent studio.
+                Created a completely real website to showcase the non-existent
+                studio.
               </li>
             </ul>
           </div>
