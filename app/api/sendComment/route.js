@@ -1,7 +1,7 @@
 // Import the necessary modules
 import clientPromise from "../../lib/mongodb"; // Update the path accordingly
 
-export default async function handler(req, res) {
+  async function handler(req, res) {
   console.log("Incoming request body:", req.body);
   // Ensure that the request method is POST
   if (req.method === "POST") {
