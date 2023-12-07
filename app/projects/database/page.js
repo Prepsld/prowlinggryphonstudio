@@ -12,7 +12,7 @@ export default function CommentPage() {
     e.preventDefault();
 
     // Send a POST request to the API route with the username and comment
-    const response = await fetch("/api/sendComment/route", {
+    const response = await fetch("/api/sendComment/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -36,4 +36,5 @@ import clientPromise from "../../lib/mongodb"; // Update the path accordingly
     return res.status(405).json({ error: "Method Not Allowed" });
   }
 }
-export { handler as GET, handler as POST };
+export {handler as POST};
+
