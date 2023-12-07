@@ -6,7 +6,6 @@ import clientPromise from "../../../lib/mongodb";
 import CredentialsProvider from "next-auth/providers/credentials";
 import {hash, compare} from "bcrypt";
 
-
  const authOptions = {
    // Configure one or more authentication providers
    providers: [
