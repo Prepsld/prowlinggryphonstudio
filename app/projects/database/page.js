@@ -1,38 +1,42 @@
 "use client";
-
-import { useState, useEffect } from "react";
+// Import the necessary modules
+import { useState } from "react";
 
 export default function CommentPage() {
   // State to hold the input values
   const [username, setUsername] = useState("");
   const [comment, setComment] = useState("");
 
+  const data = { username, comment };
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Send a POST request to the API route with the username and comment
-    const response = await fetch("/api/sendComment/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, comment }),
-    });
+    try {
+      // Send a POST request to the API route with the username and comment
+      const res = await fetch("/api/sendComment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify( data ),
+      });
 
-    if (response.ok) {
+      
       // Handle successful submission
       console.log("Comment submitted successfully");
       // Optionally, you can redirect or show a success message here
-
+      if (!res.ok) {
+        throw new Error("HTTP status " + res.status);
+      }
+      
       // Fetch existing comments again after submitting a new comment
-    } else {
+    } catch (error) {
       // Handle submission error
-      console.error("Error submitting comment:", await response.text());
+      console.error("Error submitting comment:", error);
       // Optionally, you can show an error message here
     }
   };
-
 
   return (
     <div>
@@ -56,7 +60,6 @@ export default function CommentPage() {
         </label>
         <br />
         <button type="submit">Submit Comment</button>
-
       </form>
     </div>
   );
