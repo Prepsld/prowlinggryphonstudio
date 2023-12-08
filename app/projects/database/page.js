@@ -9,12 +9,14 @@ import "react-quill/dist/quill.snow.css"; // import styles
 import DOMPurify from "dompurify";
 
 // Modal component (you can replace it with your own modal implementation)
- let ReactQuill;
+let ReactQuill;
 
- if (typeof window !== "undefined") {
-   // Only import ReactQuill on the client side
-   ReactQuill = require("react-quill");
- }
+if (typeof window !== "undefined") {
+  // Only import ReactQuill on the client side
+  import("react-quill").then((module) => {
+    ReactQuill = module.default;
+  });
+}
 //NOTE TO SELF, TURN COMMENT BOX INTO RICHTEXT EDITOR
 
 //ALSO MAYBE HASHTAG 
