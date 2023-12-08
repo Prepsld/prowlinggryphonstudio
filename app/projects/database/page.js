@@ -1,12 +1,18 @@
 "use client";
+
 // Import the necessary modules
 import { useState } from "react";
 import Navigation from "../../components/Navigation";
 import Blurb from "../../components/Blurb";
+
+// Modal component (you can replace it with your own modal implementation)
+
+
 export default function CommentPage() {
   // State to hold the input values
   const [data, setData] = useState({ username: "", comment: "" });
-
+  // State to track the modal status
+  const [showModal, setShowModal] = useState(false);
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +23,10 @@ export default function CommentPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username: data.username, comment: data.comment }),
+        body: JSON.stringify({
+          username: data.username,
+          comment: data.comment,
+        }),
       });
 
       // Optionally, you can redirect or show a success message here
@@ -25,9 +34,13 @@ export default function CommentPage() {
         throw new Error("HTTP status " + res.status);
       }
 
+      // Open the modal
+      setShowModal(true);
       // Handle successful submission
       console.log("Comment submitted successfully");
       console.log(res.status);
+      // Clear the input fields
+      setData({ username: "", comment: "" });
       // Fetch existing comments again after submitting a new comment
     } catch (error) {
       // Handle submission error
@@ -36,12 +49,23 @@ export default function CommentPage() {
     }
   };
 
+  // Function to close the modal
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="container mx-auto max-w-screen-md mt-8">
       <h1 className="text-4xl font-bold mb-6">Comment Page</h1>
       <Navigation />
-      <p className="prose">Welcome to the database test. Here you can enter a name and comment for me to read in my mongo Database! </p>
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-4 items-center">
+      <p className="prose">
+        Welcome to the database test. Here you can enter a name and comment for
+        me to read in my mongo Database!
+      </p>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col space-y-4 items-center"
+      >
         <label className="text-lg">
           Username:
           <input
@@ -69,6 +93,22 @@ export default function CommentPage() {
         </button>
       </form>
       <Blurb />
+      {/* DaisyUI Modal */}
+      {showModal && (
+        <dialog id="my_modal_1" className="modal" open>
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">Hello!</h3>
+            <p className="py-4">Comment successfully submitted!</p>
+            <div className="modal-action">
+              <form method="dialog">
+                <button className="btn" onClick={handleModalClose}>
+                  Okay
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      )}
     </div>
   );
 }
