@@ -5,10 +5,10 @@ import { useState } from "react";
 export default function CommentPage() {
   // State to hold the input values
   const [data, setData] = useState({ username: "", comment: "" });
+ 
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       // Send a POST request to the API route with the username and comment
       const res = await fetch("/api/sendComment", {
@@ -26,6 +26,7 @@ export default function CommentPage() {
       
       // Handle successful submission
       console.log("Comment submitted successfully");
+      console.log(res.status);
       // Fetch existing comments again after submitting a new comment
     } catch (error) {
       // Handle submission error
@@ -40,7 +41,7 @@ export default function CommentPage() {
       <form onSubmit={handleSubmit}>
         <label>
           Username:
-          <input
+          <input required
             type="text"
             value={data.username}
             onChange={(e) => setData({ ...data, username: e.target.value })}
@@ -49,7 +50,7 @@ export default function CommentPage() {
         <br />
         <label>
           Comment:
-          <textarea
+          <textarea required
             value={data.comment}
             onChange={(e) => setData({ ...data, comment: e.target.value })}
           />
