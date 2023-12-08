@@ -30,5 +30,21 @@ export async function POST(request) {
    }
  } 
 
+export async function GET(request) {
+  try {
+    // Connect to the MongoDB database
+    const client = await clientPromise;
+    const db = client.db("comments");
 
+    // Retrieve all comments from the "UserComments" collection
+    const comments = await db.collection("UserComments").find({}).toArray();
 
+    // Respond with the retrieved comments
+    return new Response(JSON.stringify(comments), { status: 200 });
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+    });
+  }
+}
