@@ -9,7 +9,12 @@ import "react-quill/dist/quill.snow.css"; // import styles
 import DOMPurify from "dompurify";
 
 // Modal component (you can replace it with your own modal implementation)
+ let ReactQuill;
 
+ if (typeof window !== "undefined") {
+   // Only import ReactQuill on the client side
+   ReactQuill = require("react-quill");
+ }
 //NOTE TO SELF, TURN COMMENT BOX INTO RICHTEXT EDITOR
 
 //ALSO MAYBE HASHTAG 
@@ -55,13 +60,8 @@ export default function CommentPage() {
     }
   };
 
-  let ReactQuill;
+ 
 
-  if (typeof window !== "undefined") {
-    // Only import ReactQuill on the client side
-    ReactQuill = require("react-quill");
-  }
-  
   // Function to close the modal
   const handleModalClose = () => {
     setShowModal(false);
