@@ -1,31 +1,22 @@
+// CommentPage.js
 "use client";
-
-// Import the necessary modules
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Navigation from "../../components/Navigation";
 import Blurb from "../../components/Blurb";
-import ReactQuill from "react-quill";
+//import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // import styles
-import DOMPurify from "dompurify";
+import CommentList from "../../components/comment";
 
-// Modal component (you can replace it with your own modal implementation)
-let ReactQuill;
+import dynamic from "next/dynamic";
 
-if (typeof window !== "undefined") {
-  // Only import ReactQuill on the client side
-  import("react-quill").then((module) => {
-    ReactQuill = module.default;
-  });
-}
-//NOTE TO SELF, TURN COMMENT BOX INTO RICHTEXT EDITOR
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
-//ALSO MAYBE HASHTAG 
 export default function CommentPage() {
   // State to hold the input values
   const [data, setData] = useState({ username: "", comment: "" });
   // State to track the modal status
   const [showModal, setShowModal] = useState(false);
-  const [comments, setComments] = useState([]);
+
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,29 +53,10 @@ export default function CommentPage() {
     }
   };
 
- 
-
   // Function to close the modal
   const handleModalClose = () => {
     setShowModal(false);
   };
-
-  useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const res = await fetch("/api/sendComment");
-        if (!res.ok) {
-          throw new Error("HTTP status " + res.status);
-        }
-        const commentsData = await res.json();
-        setComments(commentsData);
-      } catch (error) {
-        console.error("Error fetching comments:", error);
-      }
-    };
-
-    fetchComments();
-  }, [showModal]);
 
   return (
     <div className="container mx-auto max-w-screen-md mt-8">
@@ -123,21 +95,7 @@ export default function CommentPage() {
           Submit Comment
         </button>
       </form>
-      <div>
-        <h2>Comments:</h2>
-        <ul>
-          {comments.map((comment, index) => (
-            <li key={index}>
-              <strong>{comment.username}:</strong>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(comment.comment),
-                }}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <CommentList />
       <Blurb />
       {/* DaisyUI Modal */}
       {showModal && (
