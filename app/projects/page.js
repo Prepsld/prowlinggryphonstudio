@@ -86,6 +86,26 @@ export default function Projects() {
                 </div>
               </div>
             </li>
+            <li>
+              <div className="collapse bg-base-200">
+                <input type="checkbox" />
+                <div className="collapse-title text-xl font-medium">
+                  Database storage test
+                </div>
+                <div className="collapse-content">
+                  <p>
+                    This is a simple page that allows you to enter a username and comment and submit it to a database.
+                    I had a lot of trouble with this one, but I finally got it working!
+                  </p>
+                  <Link
+                    href="./projects/database"
+                    className="btn btn-ghost text-xl"
+                  >
+                    This took me longer than it should have
+                  </Link>
+                </div>
+              </div>
+            </li>
 
             {/* Add more school projects as needed */}
           </ul>
