@@ -55,6 +55,13 @@ export default function CommentPage() {
     }
   };
 
+  let ReactQuill;
+
+  if (typeof window !== "undefined") {
+    // Only import ReactQuill on the client side
+    ReactQuill = require("react-quill");
+  }
+  
   // Function to close the modal
   const handleModalClose = () => {
     setShowModal(false);
