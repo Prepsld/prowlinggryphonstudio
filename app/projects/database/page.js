@@ -4,10 +4,7 @@ import { useState } from "react";
 
 export default function CommentPage() {
   // State to hold the input values
-  const [username, setUsername] = useState("");
-  const [comment, setComment] = useState("");
-
-  const data = { username, comment };
+  const [data, setData] = useState({ username: "", comment: "" });
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,17 +16,16 @@ export default function CommentPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify( data ),
+        body: JSON.stringify({ username: data.username, comment: data.comment }),
       });
-
       
-      // Handle successful submission
-      console.log("Comment submitted successfully");
       // Optionally, you can redirect or show a success message here
       if (!res.ok) {
         throw new Error("HTTP status " + res.status);
       }
       
+      // Handle successful submission
+      console.log("Comment submitted successfully");
       // Fetch existing comments again after submitting a new comment
     } catch (error) {
       // Handle submission error
@@ -46,16 +42,16 @@ export default function CommentPage() {
           Username:
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={data.username}
+            onChange={(e) => setData({ ...data, username: e.target.value })}
           />
         </label>
         <br />
         <label>
           Comment:
           <textarea
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
+            value={data.comment}
+            onChange={(e) => setData({ ...data, comment: e.target.value })}
           />
         </label>
         <br />
