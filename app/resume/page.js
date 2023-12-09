@@ -15,7 +15,7 @@ export default function Resume() {
         <h2>David Prepsl</h2>
         <section>
           <h2 className="text-2xl font-bold mb-2">Contact Information</h2>
-          <p>Phone: 403-393-1372</p>
+          <p>Phone: Available upon request!</p>
           <p>Email: DavidPrepsl@gmail.com</p>
           <p>
             <a
