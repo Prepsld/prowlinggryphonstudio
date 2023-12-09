@@ -1,62 +1,81 @@
 // CommentPage.js
 "use client";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Navigation from "../../components/Navigation";
 import Blurb from "../../components/Blurb";
-//import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // import styles
-import CommentList from "../../components/comment";
-
 import dynamic from "next/dynamic";
+import DOMPurify from "dompurify";
+
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function CommentPage() {
-  // State to hold the input values
-  const [data, setData] = useState({ username: "", comment: "" });
-  // State to track the modal status
+  const usernameRef = useRef("");
+  const commentRef = useRef("");
   const [showModal, setShowModal] = useState(false);
 
-  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Send a POST request to the API route with the username and comment
       const res = await fetch("/api/sendComment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: data.username,
-          comment: data.comment,
+          username: usernameRef.current,
+          comment: commentRef.current,
         }),
       });
 
-      // Optionally, you can redirect or show a success message here
       if (!res.ok) {
         throw new Error("HTTP status " + res.status);
       }
-
-      // Open the modal
       setShowModal(true);
-      // Handle successful submission
+      
+      
       console.log("Comment submitted successfully");
       console.log(res.status);
-      // Clear the input fields
-      setData({ username: "", comment: "" });
-      // Fetch existing comments again after submitting a new comment
+
+      // Clear the input fields using refs
+      usernameRef.current.value = "";
+      commentRef.current.value = "";
     } catch (error) {
-      // Handle submission error
       console.error("Error submitting comment:", error);
-      // Optionally, you can show an error message here
     }
   };
 
-  // Function to close the modal
+  const handleUsernameChange = (e) => {
+    usernameRef.current = e.target.value;
+  };
+
+  const handleCommentChange = (value) => {
+    commentRef.current = value;
+  };
+
   const handleModalClose = () => {
     setShowModal(false);
+    fetchComments();
   };
+  const [comments, setComments] = useState([]);
+
+  const fetchComments = async () => {
+    try {
+      const res = await fetch("/api/sendComment");
+      if (!res.ok) {
+        throw new Error("HTTP status " + res.status);
+      }
+      const commentsData = await res.json();
+      setComments(commentsData);
+    } catch (error) {
+      console.error("Error fetching comments:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
 
   return (
     <div className="container mx-auto max-w-screen-md mt-8">
@@ -75,16 +94,17 @@ export default function CommentPage() {
           <input
             required
             type="text"
-            value={data.username}
-            onChange={(e) => setData({ ...data, username: e.target.value })}
+            ref={usernameRef}
+            onChange={handleUsernameChange}
             className="mt-2 p-2 border border-gray-300 rounded"
           />
         </label>
         <label className="text-lg">
           Comment:
           <ReactQuill
-            value={data.comment}
-            onChange={(value) => setData({ ...data, comment: value })}
+            required
+            value={commentRef.current}
+            onChange={handleCommentChange}
             className="mt-2 border border-gray-300 rounded"
           />
         </label>
@@ -95,7 +115,21 @@ export default function CommentPage() {
           Submit Comment
         </button>
       </form>
-      <CommentList />
+      <div>
+        <h2>Comments:</h2>
+        <ul>
+          {comments.map((comment, index) => (
+            <li key={index}>
+              <strong>{comment.username}:</strong>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(comment.comment),
+                }}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
       <Blurb />
       {/* DaisyUI Modal */}
       {showModal && (
