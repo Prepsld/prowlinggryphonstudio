@@ -17,6 +17,7 @@ export default function CommentPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.target.reset();
     try {
       const res = await fetch("/api/sendComment", {
         method: "POST",
@@ -33,14 +34,13 @@ export default function CommentPage() {
         throw new Error("HTTP status " + res.status);
       }
       setShowModal(true);
+      commentRef.current= "";
       
       
       console.log("Comment submitted successfully");
       console.log(res.status);
 
       // Clear the input fields using refs
-      usernameRef.current.value = "";
-      commentRef.current.value = "";
     } catch (error) {
       console.error("Error submitting comment:", error);
     }
