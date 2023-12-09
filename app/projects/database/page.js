@@ -17,7 +17,7 @@ export default function CommentPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    e.target.reset();
+    
     try {
       const res = await fetch("/api/sendComment", {
         method: "POST",
@@ -35,7 +35,7 @@ export default function CommentPage() {
       }
       setShowModal(true);
       commentRef.current= "";
-      
+      e.target.reset();
       
       console.log("Comment submitted successfully");
       console.log(res.status);
