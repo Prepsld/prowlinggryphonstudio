@@ -159,7 +159,7 @@ export default function DocumentPage() {
               variable looks:
             </p>
 
-            <pre className="overflow-x-auto bg-base-100 p-4 rounded-md">
+            <pre className="overflow-x-auto bg-base-100 p-4 rounded-md text-slate-500">
               {`MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-address>/<database-name}?options`}
             </pre>
           </div>
@@ -234,7 +234,7 @@ export default function DocumentPage() {
                 This route handles authentication through NextAuth, allowing
                 users to sign in and obtain authorization tokens. The
                 authentication process supports multiple providers, including
-                Google, GitHub, and my custom MongoDB provider.
+                Google, GitHub, and a custom MongoDB provider.
               </p>
             </section>
             <section>
@@ -245,13 +245,13 @@ export default function DocumentPage() {
               <h2 class="text-2xl font-bold mb-2">Parameters:</h2>
               <ul>
                 <li>
-                  <code>username</code>: User's username (for MongoDB provider)
+                  <code>username</code>: Users username (for MongoDB provider)
                 </li>
                 <li>
-                  <code>password</code>: User's password (for MongoDB provider)
+                  <code>password</code>: Users password (for MongoDB provider)
                 </li>
                 <li>
-                  <code>email</code>: User's email (for Google and Github
+                  <code>email</code>: Users email (for Google and Github
                   providers)
                 </li>
               </ul>
@@ -291,6 +291,24 @@ export default function DocumentPage() {
                 authentication.
               </p>
             </section>
+            <section>
+              <h2 class="text-2xl font-bold mb-2">Code Explanation:</h2>
+              <p>
+                The code for this authentication route utilizes NextAuth with
+                multiple providers, including Google, GitHub, and custom MongoDB
+                providers. The `authOptions` object configures each provider,
+                specifying client IDs, client secrets, and custom credential
+                fields for MongoDB. Additionally, it sets up password hashing
+                for MongoDB users and defines JWT options for token generation.
+              </p>
+              <p>
+                The route exports a handler function, which is accessible via
+                both GET and POST requests. The `MongoDBAdapter` handles data
+                storage, and the `session` configuration defines the JWT
+                strategy for session management. Customization is achieved
+                through options like specifying the sign-in page path.
+              </p>
+            </section>
           </div>
         </div>
 
@@ -315,21 +333,20 @@ export default function DocumentPage() {
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Method:</h2>
-              <p>GET (for retrieving comments)</p>
+              <h2 class="text-2xl font-bold mb-2">Methods:</h2>
               <p>POST (for sending comments)</p>
+              <p>GET (for retrieving comments)</p>
             </section>
             <section>
               <h2 class="text-2xl font-bold mb-2">Parameters:</h2>
-
               <ul>
                 <li>
                   <code>username</code>: Username of the user sending the
-                  comment
+                  comment (for POST request)
                 </li>
                 <li>
                   <code>comment</code>: Content of the comment, provided in
-                  richText format
+                  richText format (for POST request)
                 </li>
               </ul>
             </section>
@@ -339,14 +356,28 @@ export default function DocumentPage() {
                 JSON array of comments for the specified post (for GET request).
               </p>
             </section>
+            <section>
+              <h2 class="text-2xl font-bold mb-2">Code Explanation:</h2>
+              <p>
+                The provided code handles the submission and retrieval of
+                comments. For the POST request, the route inserts the users
+                comment into the MongoDB UserComments collection, associating
+                it with the provided username. For the GET request, the route
+                retrieves all comments from the collection and responds with a
+                JSON array containing the comments.
+              </p>
+              <p>
+                The MongoDB database is used to efficiently store and manage
+                user-generated comments, allowing for seamless interaction and
+                engagement on the website.
+              </p>
+            </section>
           </div>
         </div>
 
         <div className="collapse bg-base-200">
           <input type="checkbox" />
-          <div className="collapse-title text-xl font-medium">
-            SendEmail (SendGrid)
-          </div>
+          <div className="collapse-title text-xl font-medium">Send Email</div>
           <div className="collapse-content">
             <section>
               <h2 class="text-2xl font-bold mb-2">Endpoint:</h2>
@@ -357,9 +388,9 @@ export default function DocumentPage() {
             <section>
               <h2 class="text-2xl font-bold mb-2">Purpose:</h2>
               <p>
-                This route handles sending emails using the SendGrid API,
-                allowing guests to send emails to the website owner for a
-                variety of topics.
+                This route handles the sending of emails using the Nodemailer
+                library, facilitating communication with users or
+                administrators.
               </p>
             </section>
             <section>
@@ -368,31 +399,41 @@ export default function DocumentPage() {
             </section>
             <section>
               <h2 class="text-2xl font-bold mb-2">Parameters:</h2>
-
               <ul>
                 <li>
-                  <code>to</code>: Email address of the recipient
+                  <code>username</code>: Senders username
                 </li>
                 <li>
-                  <code>subject</code>: Subject of the email
+                  <code>email</code>: Senders email address
                 </li>
                 <li>
-                  <code>body</code>: Body/content of the email
+                  <code>topic</code>: Subject of the email
                 </li>
                 <li>
-                  <code>from</code>: Email address of the sender (Optional)
-                </li>
-                <li>
-                  <code>topic</code>: Topic of the email, selected from a
-                  dropdown menu
+                  <code>comment</code>: Content of the email message
                 </li>
               </ul>
             </section>
             <section>
               <h2 class="text-2xl font-bold mb-2">Response:</h2>
               <p>
-                Status indicating the success or failure of the email sending
-                process.
+                JSON object indicating the success or failure of the email
+                sending process.
+              </p>
+            </section>
+            <section>
+              <h2 class="text-2xl font-bold mb-2">Code Explanation:</h2>
+              <p>
+                The provided code utilizes the Nodemailer library to send
+                emails. It creates a transporter with the SendGrid SMTP details
+                and sends an email containing information provided in the
+                request body, such as the senders username, email, topic, and
+                comment.
+              </p>
+              <p>
+                The route is designed for use cases like contact form
+                submissions, enabling users to communicate with administrators
+                or receive important notifications via email.
               </p>
             </section>
           </div>
@@ -405,21 +446,27 @@ export default function DocumentPage() {
           In conclusion, this documentation provides a comprehensive overview of
           the features and functionality that power my website. From
           understanding the MongoDB connection logic to exploring the
-          intricacies of API routes and authentication with NextAuth, you've
+          intricacies of API routes and authentication with NextAuth, you have
           gained insight into the inner workings of my web application!
         </p>
         <p>
           I encourage you to delve deeper into each section for a more thorough
           understanding of how each feature contributes to the overall user
-          experience. Whether you're interested in exploring my API
-          routes, grasping the intricacies of MongoDB integration, or
-          discovering the versatility of authentication with NextAuth, this
-          documentation should get you started.
+          experience. Whether you are interested in exploring my API routes,
+          grasping the intricacies of MongoDB integration, or discovering the
+          versatility of authentication with NextAuth, this documentation should
+          get you started.
         </p>
         <p>
           Thank you for exploring the documentation. If you have any further
           questions or need assistance, feel free to reach out. Happy exploring!
-          As well, my code is available on GitHub at the following link: <a href="https://github.com/Prepsld/prowlinggryphonstudio" target="_blank">prowlinggryphonstudio</a>
+          As well, my code is available on GitHub at the following link:{" "}
+          <a
+            href="https://github.com/Prepsld/prowlinggryphonstudio"
+            target="_blank"
+          >
+            prowlinggryphonstudio
+          </a>
         </p>
       </section>
 
