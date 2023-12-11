@@ -20,7 +20,7 @@ export default function Projects() {
         <section>
           <h2 className="text-2xl font-bold mb-2">School Projects</h2>
 
-          <ul>
+          <ul className="list-none">
             <li>
               <div className="collapse bg-base-200">
                 <input type="checkbox" />
@@ -94,8 +94,9 @@ export default function Projects() {
                 </div>
                 <div className="collapse-content">
                   <p>
-                    This is a simple page that allows you to enter a username and comment and submit it to a database.
-                    I had a lot of trouble with this one, but I finally got it working!
+                    This is a simple page that allows you to enter a username
+                    and comment and submit it to a database. I had a lot of
+                    trouble with this one, but I finally got it working!
                   </p>
                   <Link
                     href="./projects/database"
@@ -113,11 +114,30 @@ export default function Projects() {
 
         <section>
           <h2 className="text-2xl font-bold mb-2">Private Projects</h2>
-          <ul>
+          <ul className="list-none">
             <li>
-              <Link href="/" className="btn btn-ghost text-xl">
-                Private Project 1
-              </Link>
+              <div className="collapse bg-base-200">
+                <input type="checkbox" />
+                <div className="collapse-title text-xl font-medium">
+                  Game Design
+                </div>
+                <div className="collapse-content">
+                  <p>
+                    My dream goal. One day I hope to be able to create my own
+                    video game, inspired by my favorite game of all time, X-Com:
+                    Terror from the Deep. I have a lot of ideas, but I need to
+                    learn a lot more before I can even begin to start this
+                    project. This page will be a continuous work in progress, as
+                    I learn more and more about game design and development.
+                  </p>
+                  <Link
+                    href="./projects/game"
+                    className="btn btn-ghost text-xl"
+                  >
+                    Take a look at my current progress!
+                  </Link>
+                </div>
+              </div>
             </li>
             <li>
               <Link href="/" className="btn btn-ghost text-xl">
