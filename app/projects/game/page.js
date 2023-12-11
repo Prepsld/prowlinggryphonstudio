@@ -466,46 +466,7 @@ export default function gamePage() {
         <h2 className="text-3xl font-bold mb-2">Art and Design</h2>
 
         <p>
-          Immerse yourself in the nostalgia of classic pixel art in RetroQuest:
-          Chronicles of the Guildlands (Title pending). I want to harken back to
-          one of my favorites, X-Com: Terror from the Deep, and I want to create
-          an art style that is reminiscent of that classic.
-        </p>
-
-        <h3 className="text-2xl font-bold mb-2">Pixel Art Aesthetics</h3>
-        <p>
-          The game features a classic pixel art style that pays homage to the
-          timeless classics. Characters, environments, and creatures are
-          meticulously crafted with pixel-perfect precision, providing a
-          visually cohesive and immersive experience reminiscent of the games
-          that ignited my passion.
-        </p>
-
-        <h3 className="text-2xl font-bold mb-2">
-          World Map as a Traditional Fantasy Scroll
-        </h3>
-        <p>
-          The world map unfolds like a traditional fantasy scroll, evoking the
-          spirit of classic fantasy tales. Every contour, village, and point of
-          interest is intricately drawn, creating a world that feels both
-          expansive and intimate. Explore a rich and detailed landscape that
-          sparks the imagination, and discover the secrets that lie within.
-        </p>
-
-        <h3 className="text-2xl font-bold mb-2">Grounded Realism in Design</h3>
-        <p>
-          RetroQuest: Chronicles of the Guildlands (Title pending) takes a
-          grounded and realistic approach to its design, immersing players in a
-          world where every pixel serves a purpose. From the detailed isometric
-          maps to the character animations, expect a design that enhances the
-          gameplay experience by bringing the fantasy world to life with a touch
-          of authenticity. This is not a game inspired by anime or comic books,
-          but rather pays homage to dark and low fantasy classics.
-        </p>
-
-        <p>
-          Prepare to be captivated by the visual allure of a pixelated world
-          that seamlessly marries nostalgia with modern design principles.
+          WORK IN PROGRESS
         </p>
       </section>
 
@@ -513,44 +474,7 @@ export default function gamePage() {
         <h2 className="text-3xl font-bold mb-2">Audio</h2>
 
         <p>
-          Dive into the nostalgic soundscape of RetroQuest: Chronicles of the
-          Guildlands (Title pending), where the audio is a trip back to the
-          early '90s. Embracing a retro vibe, the game's audio design
-          complements the pixelated visuals, creating an immersive experience
-          reminiscent of classic games from the golden era.
-        </p>
-
-        <h3 className="text-2xl font-bold mb-2">Low Humming Tunes</h3>
-        <p>
-          Feel the ambiance with low humming tunes that set the mood for
-          exploration and turn-based battles. The minimalist yet evocative
-          melodies accompany your journey, enhancing the overall atmosphere of
-          the game without overpowering the pixelated visuals.
-        </p>
-
-        <h3 className="text-2xl font-bold mb-2">Spooky Synth</h3>
-        <p>
-          Immerse yourself in the eerie and mysterious with spooky synth sounds.
-          These tones add an extra layer of suspense and intrigue, especially
-          during encounters with the unknown. The haunting melodies resonate
-          with the otherworldly elements of your quest.
-        </p>
-
-        <h3 className="text-2xl font-bold mb-2">
-          Chunky Low-Quality Audio for Vocals
-        </h3>
-        <p>
-          Dialogue and vocals carry a chunky, low-quality charm, reminiscent of
-          early '90s games. The intentional imperfections in the audio
-          contribute to the retro aesthetic, transporting players to a time when
-          game audio was raw and distinctive.
-        </p>
-
-        <p>
-          Experience the full spectrum of RetroQuest: Chronicles of the
-          Guildlands (Title pending)'s audio design, where simplicity meets
-          nostalgia, creating a sonic landscape that feels both familiar and
-          uniquely captivating.
+          WORK IN PROGRESS
         </p>
       </section>
 
