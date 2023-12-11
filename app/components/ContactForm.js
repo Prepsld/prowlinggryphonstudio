@@ -1,9 +1,6 @@
 // components/ContactForm.js
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
-import "react-quill/dist/quill.snow.css";
 
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -50,6 +47,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className="mt-8 flex flex-col items-center">
         <label className="mb-4 flex flex-col">
           <span>Username:</span>
+
           <input
             className="input-field border border-slate-500"
             type="text"
@@ -61,6 +59,7 @@ const ContactForm = () => {
         </label>
         <label className="mb-4 flex flex-col">
           <span>Email:</span>
+
           <input
             className="input-field border border-slate-500"
             type="email"
@@ -71,6 +70,7 @@ const ContactForm = () => {
         </label>
         <label className="mb-4 flex flex-col">
           <span>Topic:</span>
+
           <select
             className="input-field border border-slate-500"
             name="topic"
@@ -89,10 +89,13 @@ const ContactForm = () => {
         </label>
         <label className="mb-4 flex flex-col">
           <span>Comment:</span>
-          <ReactQuill
-            className="quill-editor"
+
+          <textarea
+            className="input-field border border-slate-500"
+            name="comment"
             value={formData.comment}
-            onChange={(value) => setFormData({ ...formData, comment: value })}
+            onChange={handleChange}
+            required
           />
         </label>
         <button className="btn btn-accent mt-4" type="submit">
