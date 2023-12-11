@@ -44,7 +44,7 @@ const ContactForm = () => {
 
   return (
     <div className="prose container mx-auto max-w-screen-md">
-      <form onSubmit={handleSubmit} className="mt-8 flex flex-col items-center">
+      <form onSubmit={handleSubmit} className=" flex flex-col items-center">
         <label className="mb-4 flex flex-col">
           <span>Username:</span>
 

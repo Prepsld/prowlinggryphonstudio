@@ -20,21 +20,21 @@ const Navigation = () => {
     <nav className="navbar bg-base-300">
       <div className="container mx-auto flex items-center justify-between">
         <div>
-          <Link href="/" className="btn btn-ghost text-lg">
+          <Link href="/" className="btn btn-ghost text-md">
             Home Page
           </Link>
         </div>
         <div className="space-x-1">
-          <Link href="/documentation" className="btn btn-ghost text-lg">
+          <Link href="/documentation" className="btn btn-ghost text-md">
             Documentation
           </Link>
-          <Link href="/projects" className="btn btn-ghost text-lg">
+          <Link href="/projects" className="btn btn-ghost text-md">
             Projects
           </Link>
-          <Link href="/resume" className="btn btn-ghost text-lg">
+          <Link href="/resume" className="btn btn-ghost text-md">
             Resume
           </Link>
-          <Link href="/contact" className="btn btn-ghost text-lg">
+          <Link href="/contact" className="btn btn-ghost text-md">
             Contact Me
           </Link>
           {/* Add more links as needed */}
