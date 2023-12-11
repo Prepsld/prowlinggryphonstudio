@@ -20,11 +20,6 @@ export default function gamePage() {
           to update this page once I begin, and posting my progress as updates,
           however infrequent!
         </p>
-        <h3>
-          NOTE: Most of the text here has been generated using an AI. I plan on
-          modifying and editing the text as time progresses, but this should
-          give a simple overview of what ideas I have for my game.
-        </h3>
       </section>
 
       <section>
@@ -62,7 +57,9 @@ export default function gamePage() {
 
       <section id="overview">
         {/* Overview Section Content */}
-        <h2 className="text-3xl font-bold mb-2">Overview</h2>
+        <h2 className="text-3xl bg-base-300 grid place-items-center rounded-box font-bold mb-2">
+          Overview
+        </h2>
         <p>
           Welcome to RetroQuest: Chronicles of the Guildlands (Title pending),
           my dream goal. This game is a real time strategy / turn based tactical
@@ -156,7 +153,9 @@ export default function gamePage() {
       </section>
 
       <section id="gameplay-mechanics">
-        <h2 className="text-3xl font-bold mb-2">Gameplay Mechanics</h2>
+        <h2 className="text-3xl bg-base-300 grid place-items-center rounded-box font-bold mb-2">
+          Gameplay Mechanics
+        </h2>
 
         <section id="combat">
           <h3 className="text-2xl font-bold mb-2">Combat:</h3>
@@ -286,10 +285,14 @@ export default function gamePage() {
               monsters and bandits.
             </li>
             <li>
-              <strong>Be as dependant or free as you wish:</strong> When it comes to gathering your people and resources, 
-              you are given the freedom to determine how you accomplish your goals. You can choose to sign contracts with nearby villages
-               and towns for supplies in return for completing quests, or you can choose to build your own facilities and halls to gather your own 
-               resources. As long as the taxes get paid, the lords of the land don't care how you get your materials.
+              <strong>Be as dependant or free as you wish:</strong> When it
+              comes to gathering your people and resources, you are given the
+              freedom to determine how you accomplish your goals. You can choose
+              to sign contracts with nearby villages and towns for supplies in
+              return for completing quests, or you can choose to build your own
+              facilities and halls to gather your own resources. As long as the
+              taxes get paid, the lords of the land don't care how you get your
+              materials.
             </li>
             {/* Add more base management mechanics as needed */}
           </ul>
@@ -298,13 +301,13 @@ export default function gamePage() {
         <section id="technology-tree">
           <h3 className="text-2xl font-bold mb-2">Technology Tree</h3>
           <p>
-            Whether its learning new smithing methods to speed up production or create new metals, or
-            researching new spells for your magically inclined adventurers, the
-             three technology trees will be a key part of your guild's progression. As
-            you complete quests and expand your guildhall, you will gain access
-            to new technologies, allowing you to create new equipment and
-            spells, and even newer, advanced facilities such as a dwarven forge,
-            or a wizards spire.
+            Whether its learning new smithing methods to speed up production or
+            create new metals, or researching new spells for your magically
+            inclined adventurers, the three technology trees will be a key part
+            of your guild's progression. As you complete quests and expand your
+            guildhall, you will gain access to new technologies, allowing you to
+            create new equipment and spells, and even newer, advanced facilities
+            such as a dwarven forge, or a wizards spire.
           </p>
 
           <ul>
@@ -328,21 +331,32 @@ export default function gamePage() {
               bring misfortune to your guild.
             </li>
             <li>
-              <strong>The Magical Tree:</strong> Hiring arcane scholars and giving them the space in a library will allow you to research
-              new spells, as well as discover which of your recruits has magical potential. As well, you will be able to research new magical items, or use
-              rituals on the worldmap to gain powerful boons or remove curses from artifacts.
+              <strong>The Magical Tree:</strong> Hiring arcane scholars and
+              giving them the space in a library will allow you to research new
+              spells, as well as discover which of your recruits has magical
+              potential. As well, you will be able to research new magical
+              items, or use rituals on the worldmap to gain powerful boons or
+              remove curses from artifacts.
             </li>
             <li>
-              <strong>The Martial Tree:</strong> By hiring blacksmiths and giving them the space in a smithy, you will be able to improve your guilds equipment, craft new items, 
-              and research new materials and techniques to improve their efficiency. They will be able to directly take the resources you gather and turn them into weapons, armor and 
-              other equipment for your adventurers out in the field. 
+              <strong>The Martial Tree:</strong> By hiring blacksmiths and
+              giving them the space in a smithy, you will be able to improve
+              your guilds equipment, craft new items, and research new materials
+              and techniques to improve their efficiency. They will be able to
+              directly take the resources you gather and turn them into weapons,
+              armor and other equipment for your adventurers out in the field.
             </li>
             <li>
-              <strong>The Innovation Tree:</strong> By hiring specialized researchers and recruiters, you will be able to improve 
-              the non combat, non magical aspects of your guild. You will be able to research topics such as new medicines, better living quarters,
-              or even new techniques for haggling and bartering, or negotiating quests for better pay. Finally, research down this tree will allow you to recruit better and more 
-              specialized / experienced recruits, or even allow you to tame and train different beasts to use as mounts or companions. After all,
-              why walk to your quest location when you could instead ride a mighty gryphon or drake?
+              <strong>The Innovation Tree:</strong> By hiring specialized
+              researchers and recruiters, you will be able to improve the non
+              combat, non magical aspects of your guild. You will be able to
+              research topics such as new medicines, better living quarters, or
+              even new techniques for haggling and bartering, or negotiating
+              quests for better pay. Finally, research down this tree will allow
+              you to recruit better and more specialized / experienced recruits,
+              or even allow you to tame and train different beasts to use as
+              mounts or companions. After all, why walk to your quest location
+              when you could instead ride a mighty gryphon or drake?
             </li>
             {/* Add more technology tree mechanics as needed */}
           </ul>
@@ -350,41 +364,45 @@ export default function gamePage() {
       </section>
 
       <section id="storyline">
-        <h2 className="text-3xl font-bold mb-2">Storyline</h2>
+        <h2 className="text-3xl bg-base-300 grid place-items-center rounded-box font-bold mb-2">
+          Storyline
+        </h2>
 
         <p>
-          In RetroQuest: Chronicles of the Guildlands (Title pending), the
-          narrative is driven by your choices and the path you carve for your
-          guild. There isn't a predefined storyline until the later stages of
-          the game; instead, you have the freedom to shape your guild's destiny
-          and influence the world around you. As a new and ambitious guild
-          leader, you'll embark on a journey of fame, fortune, and treacherous
-          challenges.
+          RetroQuest: Chronicles of the Guildlands (Title pending) is a freeform
+          game, with very little set storyline or narrative. Instead, the game
+          focuses on the players ability to create their own narrative through
+          the adventures they undertake, and the successes or failures they
+          experience along the way. There is a late game story, but it is only
+          unlocked once the player has reached a certain renown, and it is up to
+          the player to decide if they want to pursue it. The game is designed
+          to be replayable, with every new game offering a new world and
+          adventures to undertake, and different options for the player to take
+          compared to their previous playthroughs.
         </p>
 
         <h3 className="text-2xl font-bold mb-2">Guild Development</h3>
         <p>
           You begin the game as a newly retired adventurer, starting a new
           guildhall with the proceeds of your adventuring career. You will have
-          to recruit new adventurers, manage your resources, and complete quests
-          to gain new wealth and renown. As your guild grows, you will gain the
+          to recruit new adventurers, gather resources, and complete quests to
+          gain wealth and renown. As your guild grows, you will gain the
           attention of more important peoples, and you will be given more
           dangerous and complex quests. Finally, when you have made a successful
-          name for yourself, heard all across the region, you will be given a
-          pivotal quest by the kingdom's authorities, plunging you into a dark
-          and perilous adventure to root out corruption and dismantle a demonic
-          cult threatening the realm.
+          name for yourself heard all across the region, you will be given a
+          pivotal quest by the kingdom's leading authorities, plunging you into
+          a dark and perilous quest to root out corruption and dismantle a
+          demonic cult threatening the realm.
         </p>
 
         <h3 className="text-2xl font-bold mb-2">Freedom of Choice</h3>
         <p>
           Do you want your guild to specialize in magical warriors and wizards?
           Or perhaps you shun magic entirely, recruiting only the most skilled
-          warriors and archers? Maybe perhaps you prefer skill and sublety,
+          warriors and barbarians? Maybe perhaps you prefer skill and subtlety,
           training your recruits to use tools and specialized items to sneak
           into dungeons and accomplish tasks with as little combat as possible?
-          The choice is yours, and your decisions will shape your guild's
-          destiny.
+          You are given the freedom to mold your guild however you see fit.
         </p>
 
         <h3 className="text-2xl font-bold mb-2">The Ultimate Goal</h3>
@@ -404,52 +422,55 @@ export default function gamePage() {
           dangerous realms, equip your adventurers with legendary equipment, and
           delve into the heart of the cult's operations. Face the most powerful
           enemies you have ever encountered, mighty demons and their devoted
-          cultists. In the end, you will have to enter the portal itself, and
-          descend into hell to confront the overlord, and close the portal from
-          within. Will you be able to save the realm from the ultimate threat?
+          cultists. In the end, you will have to enter a dark portal, and
+          descend into the depths of hell to confront the overlord, and close
+          the portal from within. Will you be able to save the realm from the
+          ultimate threat?
         </p>
 
         <p>
           Will your guild rise to the occasion, or will you fail and doom the
           realm to a dark and terrible fate? Only with the skills, cunning and
-          bravery of your adventurers will you be able to save the realm.
+          bravery of your adventurers will you be succeed.
         </p>
       </section>
 
       <section id="recruitment-and-adventurers">
-        <h2 className="text-3xl font-bold mb-2">Recruitment and Adventurers</h2>
+        <h2 className="text-3xl bg-base-300 grid place-items-center rounded-box font-bold mb-2">
+          Recruitment and Adventurers
+        </h2>
 
         <p>
           In RetroQuest: Chronicles of the Guildlands (Title pending), the heart
           of your guild lies in the diverse group of individuals you recruit.
           Unlike traditional character-focused games, your guild is built upon
-          the shoulders of villagers of all shapes, sizes, and races. Embrace a
-          classless system that allows you to shape and mold your recruits into
-          the adventurers you desire, each with their own unique strengths and
-          weaknesses.
+          the shoulders of villagers of all shapes, sizes, and races. This game
+          uses a classless system that allows you to shape and mold your
+          recruits into the adventurers you desire, each with their own unique
+          strengths and weaknesses.
         </p>
 
         <h3 className="text-2xl font-bold mb-2">Classless System</h3>
         <p>
-          Say goodbye to predefined character classes. Each recruit is a blank
-          slate with random attributes and skills, and it's up to you to train
-          and guide them. While the potential is vast, not every recruit is
-          capable of mastering every skill. Some may struggle with certain
-          weapons, while others might lack the physical resilience for melee
-          combat, or be entirely incapable of magical ability. Embrace the
-          challenge of working with what you get, utilizing strengths, and
-          mitigating weaknesses to turn recruits into successful heroes.
+          Say goodbye to predefined character classes. Each recruit is created
+          with random attributes and skills, and it's up to you to train and
+          guide them. While the potential is vast, not every recruit is capable
+          of mastering every skill. Some may struggle with certain weapons,
+          while others might lack the physical resilience for melee combat, or
+          be entirely incapable of magical ability. Embrace the challenge of
+          working with what you get, utilizing strengths, and mitigating
+          weaknesses to turn recruits into successful heroes.
         </p>
 
         <h3 className="text-2xl font-bold mb-2">Randomness and Adaptability</h3>
         <p>
           The recruitment process is unpredictable. You never know what kind of
-          potential recruit your guild will receive until they arrive. Some may
-          excel in multiple categories, or be limited to a single talent or
-          profession. Others may possess a natural aptitude for magic, or
-          trained their entire life with a single weapon. Adaptability is key;
-          learn to leverage the unique attributes of each recruit and tailor
-          your strategies accordingly.
+          potential recruit your guild will receive until they arrive. You might
+          get lucky and receive a recruit with a high natural stats, or
+          unfortunately find someone with almost no skills whatsoever. You might
+          shun these poor dropouts, or use them as meatshields for your more
+          capable recruits. Ultimately, it's up to you to decide just how to
+          utilize the recruits you are given.
         </p>
 
         <h3 className="text-2xl font-bold mb-2">Race and Diversity</h3>
@@ -466,56 +487,45 @@ export default function gamePage() {
           Progressing in the game and research trees will allow you to further
           refine your recruitment process. Send recruiters out to search for
           recruits with specific talents, stats, or unique abilities. Tailor
-          your guild to meet the demands of specific quests or challenges by
+          your searches to meet the demands of specific quests or challenges by
           strategically seeking out recruits with desired traits, or by training
-          your existing recruits to meet the challenges ahead. The choice is
-          yours.
-        </p>
-
-        <p>
-          The success of your guild rests on your ability to recognize potential
-          in every recruit and adapt your strategies based on their unique
-          qualities. Can you turn the most unlikely villagers into legendary
-          adventurers?
+          your existing recruits to meet the challenges ahead.
         </p>
       </section>
 
       <section id="world-generation-and-environments">
-        <h2 className="text-3xl font-bold mb-2">
+        <h2 className="text-3xl bg-base-300 grid place-items-center rounded-box font-bold mb-2">
           World Generation and Environments
         </h2>
 
         <p>
-          Explore a dynamically generated world in RetroQuest: Chronicles of the
-          Guildlands (Title pending), where both the macro and micro aspects are
-          procedurally crafted to provide a unique and immersive experience. The
-          game world is procedurally generated, offering a vast canvas of
-          diverse environments, each with its own challenges and opportunities.
+          This game will utilize a variety of procedural generation techniques
+          to create a unique and interesting world to explore. Both the
+          Worldscape and each dungeon, crypt or lair will be procedurally
+          generated, ensuring that no two playthroughs the same.
         </p>
 
         <h3 className="text-2xl font-bold mb-2">
           Procedurally Generated World Map
         </h3>
         <p>
-          The world map, generated with either a specific seed or one you input
-          manually, is the canvas upon which your guild's adventures unfold. It
-          features a variety of environments, including villages, towns, and
-          places of interest such as dungeons and lairs, as well as biomes such
-          as dense forests, snowy and rocky mountains, or even hilly plains.
-          Each playthrough offers a new and unpredictable landscape for you to
-          explore.
+          Generation starts with the world map, which defines the different
+          biomes and environments of the world. It is then populated with a
+          variety of locations, such as villages, towns, dungeons, crypts, and
+          lairs, and more, and then given a short history of events that have
+          occurred in the past. This is not an entire planet, but rather a small
+          section of one, focusing on only a single kingdom and its surrounding
+          lands.
         </p>
 
-        <h3 className="text-2xl font-bold mb-2">
-          Isometric Maps for Turn-Based Exploration
-        </h3>
+        <h3 className="text-2xl font-bold mb-2">Isometric Maps</h3>
         <p>
           When your party arrives at a location, the isometric map is
           dynamically generated based on the environment and biome of that
           specific location on the world map. The map is then modified according
-          to the type of place, ensuring that a dungeon in a desert environment
-          feels distinct from a dungeon in a forest, both in appearance and the
-          creatures that inhabit it.
+          to the type of place it is, ensuring that a dungeon in a desert
+          environment feels distinct from a dungeon in a forest, both in
+          appearance and the creatures that inhabit it.
         </p>
 
         <h3 className="text-2xl font-bold mb-2">
@@ -530,13 +540,17 @@ export default function gamePage() {
       </section>
 
       <section id="art-and-design">
-        <h2 className="text-3xl font-bold mb-2">Art and Design</h2>
+        <h2 className="text-3xl bg-base-300 grid place-items-center rounded-box font-bold mb-2">
+          Art and Design
+        </h2>
 
         <p>WORK IN PROGRESS</p>
       </section>
 
       <section id="audio">
-        <h2 className="text-3xl font-bold mb-2">Audio</h2>
+        <h2 className="text-3xl bg-base-300 grid place-items-center rounded-box font-bold mb-2">
+          Audio
+        </h2>
 
         <p>WORK IN PROGRESS</p>
       </section>
