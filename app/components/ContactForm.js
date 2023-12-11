@@ -1,5 +1,8 @@
 // components/ContactForm.js
 import React, { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -45,8 +48,8 @@ const ContactForm = () => {
   return (
     <div className="prose container mx-auto max-w-screen-md">
       <form onSubmit={handleSubmit} className="mt-8 flex flex-col items-center">
-        <label className="mb-4">
-          Username:
+        <label className="mb-4 flex flex-col">
+          <span>Username:</span>
           <input
             className="input-field border border-slate-500"
             type="text"
@@ -56,8 +59,8 @@ const ContactForm = () => {
             required
           />
         </label>
-        <label className="mb-4">
-          Email:
+        <label className="mb-4 flex flex-col">
+          <span>Email:</span>
           <input
             className="input-field border border-slate-500"
             type="email"
@@ -66,8 +69,8 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </label>
-        <label className="mb-4">
-          Topic:
+        <label className="mb-4 flex flex-col">
+          <span>Topic:</span>
           <select
             className="input-field border border-slate-500"
             name="topic"
@@ -84,14 +87,12 @@ const ContactForm = () => {
             {/* Add more options as needed */}
           </select>
         </label>
-        <label className="mb-4">
-          Comment:
-          <textarea
-            className="input-field border border-slate-500"
-            name="comment"
+        <label className="mb-4 flex flex-col">
+          <span>Comment:</span>
+          <ReactQuill
+            className="quill-editor"
             value={formData.comment}
-            onChange={handleChange}
-            required
+            onChange={(value) => setFormData({ ...formData, comment: value })}
           />
         </label>
         <button className="btn btn-accent mt-4" type="submit">

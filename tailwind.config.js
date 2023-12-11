@@ -38,9 +38,9 @@ module.exports = {
           "error": "#e94e4e",
         },
     },
-    "retro",
+    "cupcake",
     "business",
-    "cupcake"
+    "retro",
     ],
   },
 }

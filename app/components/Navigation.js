@@ -47,6 +47,7 @@ const Navigation = () => {
         </option>
         <option value="cupcake">Light</option>
         <option value="business">Dark</option>
+        <option value="retro">Retro</option>
       </select>
     </nav>
   );
