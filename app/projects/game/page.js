@@ -14,6 +14,9 @@ export default function gamePage() {
           Guildlands (Title pending). This document outlines the key aspects of
           the game, providing an overview of its concept, mechanics, and more.
         </p>
+        <h3>NOTE: Most of the text here has been generated using an AI. I plan on modifying and editing the text as time progresses, 
+            but this should give a simple overview of what ideas I have for my game.
+        </h3>
       </section>
 
       <section>
