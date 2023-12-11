@@ -2,20 +2,28 @@
 
 import Navigation from "../../components/Navigation";
 import Blurb from "../../components/Blurb";
-
+// RetroQuest: Chronicles of the Guildlands (Title pending)
 export default function gamePage() {
   return (
     <div className="prose container mx-auto max-w-screen-md">
       <Navigation />
       <section>
-        <h1 className="text-4xl font-bold mb-4">Game Design Document</h1>
+        <h1 className="text-4xl font-bold mb-4">
+          RetroQuest: Chronicles of the Guildlands
+        </h1>
         <p>
-          Welcome to the game design document for RetroQuest: Chronicles of the
-          Guildlands (Title pending). This document outlines the key aspects of
-          the game, providing an overview of its concept, mechanics, and more.
+          Welcome to my game project page! This page will serve as a central hub
+          for all information related to my game, starting with my design
+          document, and eventually code snippets or images. This page serves as
+          both a way for me to organize my thoughts and ideas as well as a way
+          to force myself to actually work towards a goal. I will be attempting
+          to update this page once I begin, and posting my progress as updates,
+          however infrequent!
         </p>
-        <h3>NOTE: Most of the text here has been generated using an AI. I plan on modifying and editing the text as time progresses, 
-            but this should give a simple overview of what ideas I have for my game.
+        <h3>
+          NOTE: Most of the text here has been generated using an AI. I plan on
+          modifying and editing the text as time progresses, but this should
+          give a simple overview of what ideas I have for my game.
         </h3>
       </section>
 
@@ -47,7 +55,7 @@ export default function gamePage() {
           <li>
             <a href="#audio">Audio</a>
           </li>
-          
+
           {/* Add more sections as needed */}
         </ul>
       </section>
@@ -56,76 +64,94 @@ export default function gamePage() {
         {/* Overview Section Content */}
         <h2 className="text-3xl font-bold mb-2">Overview</h2>
         <p>
-          Welcome to RetroQuest: Chronicles of the Guildlands (Title pending), a
-          retro-inspired fantasy turn-based tactics game that draws inspiration
-          from classic titles like X-Com: UFO Defense and Terror From The Deep.
-          Prepare to embark on an epic journey as a new and aspiring guild
-          leader, eager to carve your name in history and amass fortune by
-          managing a guild of skilled adventurers.
+          Welcome to RetroQuest: Chronicles of the Guildlands (Title pending),
+          my dream goal. This game is a real time strategy / turn based tactical
+          combat simulator, where you take control of a guildhall and manage
+          your people and supplies as you send your adventurers out into the
+          world to complete quests, gather resources, and fight monsters. The
+          game is heavily inspired by one of my favorite games of all time,
+          X-COM: UFO Defense, and I hope to capture the same feeling of dread
+          and excitement as you send your adventurers out into the world, never
+          knowing if they will return alive or not.
         </p>
 
         {/* Key Features */}
         <h3 className="text-2xl font-bold mb-2">Key Features:</h3>
         <ol>
           <li>
-            <strong>Hardcore and Deadly Combat:</strong> Engage in challenging
-            turn-based tactical battles that demand strategic thinking and
-            careful planning. Combat is unforgiving, and every decision matters.
-            Death is permanent, and the loss of a skilled adventurer can be a
-            devastating blow to your guild. Will you be able to keep your
-            adventurers alive long enough to fulfill your quest and return back
-            rich?
+            <strong>Hardcore and Deadly Combat:</strong> The main focus of the
+            game is the turn based isometric tactics screen. When your
+            adventurers arrive at a location, the screen shifts to an isometric
+            grid. Here, you will have to explore, fight, and loot your way
+            through the location, all while managing your parties health and
+            resources. Combat is deadly and quick, and a single mistake can
+            spell the end for one or more of your adventurers.
           </li>
           <li>
-            <strong>Real-Time World Map:</strong> Explore a vast and dynamic
-            world in real-time, filled with villages, towns, and mysterious
-            locations such as crypts, dungeons, ruins and monstrous lairs. Your
-            guild operates in a living, breathing world where events unfold, and
-            time progresses. Keep a watchful eye on the ever-changing landscape
-            as you decide which quests to undertake and where to send your
-            adventurers.
+            <strong>Real-Time World Map:</strong> Outside of the combat, you
+            will watch over a world map with real time progression. As time
+            passes, new quests will arrive at your base of operations, as well
+            as news or other random events. You will have to manage your
+            resources and reputation in order to ensure you stay in business and
+            thrive. Send parties out to explore new locations, gather resources,
+            or set out to find new quests, and watch as your parties travel
+            across the map and potentially meet new encounters on their way.
           </li>
           <li>
-            <strong>Base Management:</strong> Build and expand your guild
-            headquarters, strategically placing facilities to enhance your
-            adventurers' abilities and improve your overall guild efficiency.
-            Manage resources, recruit new talent, and ensure your guild is
-            well-equipped to face the challenges that lie ahead. Remember to
-            build defenses however, as your guild will be vulnerable to
-            retaliation by monsters and other hostile forces like opposing
-            mercenary guilds.
+            <strong>Base Management:</strong> Starting out with nothing but a
+            small tavern and a few willing recruits, you will eventually build
+            and expand your guildhall, adding new facilities and improving
+            existing ones to support your business. Eventually, you might even
+            expand and build new guildhalls, or turn your existing one into the
+            likes of a mighty fortress, for competition is tough, and other
+            jealous mercenary guilds might retaliate against you.
           </li>
           <li>
-            <strong>Technology Tree:</strong> Progress through multiple
-            technology trees, unlocking new weapons, magical abilities, and
-            strategic abilities. Research ancient knowledge, uncover lost
-            artifacts, and stay ahead of the ever-evolving threats in your quest
-            for fame and glory and riches.
+            <strong>Technology Tree:</strong> The game will eventually
+            incorporate three distinct technology trees: Arcane, Martial, and
+            Innovation. Each tree will require its own facility and unique
+            workers, and will give you opportunities to unlock new equipment,
+            spells, and facilities. As one example, building a library and
+            hiring scholars will allow you to research new spells and magical
+            equipment, while building a smithy and hiring blacksmiths will allow
+            you to research and craft new equipment and armor from the resources
+            your party gathers. the Innovation tree meanwhile, will give you new
+            abilities to expand and better manage your guild, from bartering for
+            better prices to sending specialized recruiters to find new talent.
           </li>
         </ol>
 
         {/* Progression and Narrative */}
         <h3 className="text-2xl font-bold mb-2">Progression and Narrative:</h3>
         <p>
-          Begin your journey as a humble new guild leader, taking on quests for
-          local villages and towns. As your renown grows and your successes
-          multiply, catch the attention of the kingdom's lords and nobles. Be
-          prepared to receive a critical quest that transcends the mundane,
-          plunging you into a dark and perilous adventure to root out corruption
-          and dismantle a demonic cult threatening the realm.
+          Begin your journey as a humble new guild leader, taking on simple
+          quests for the nearby friendly locations, such as clearing a small
+          bandit camp or hunting a dangerous wolf pack. As you complete quests
+          and gain renown, you will be given more complex and dangerous quests,
+          such as clearing out a nearby crypt or escorting a caravan to a
+          distant town. Eventually, you will be given a pivotal quest by the
+          kingdom's authorities, tasking you with investigating a demonic cult
+          that has been gaining more and more infamy. However, you are free to
+          accept or reject any quests you are given, but be aware that your
+          reputation and fame matters. Refusing to accept too many quests will
+          cause your reputation to suffer, and you might be forced to close your
+          guildhall for good!
         </p>
 
         {/* Gameplay Experience */}
         <h3 className="text-2xl font-bold mb-2">Gameplay Experience:</h3>
         <p>
-          Immerse yourself in a rich fantasy world where every decision shapes
-          your destiny. You will have to recruit diverse adventurers, manage
-          your resources and people, and make strategic choices in combat. Your
-          leadership skills will be put to the test, and every wrong decision
-          can be devastating. The combination of deadly encounters, a real-time
-          world map, base management, and a technology tree creates a
-          multifaceted gaming experience that promises hours of immersive
-          gameplay.
+          I want this game to have a grounded, lower fantasy feel to it. Magic
+          exists but it is rare and powerful. There are many races, but they
+          feel alien to regular humans. The world is dangerous, and even a lowly
+          bandit can easily slay one of your own adventurers with a lucky blow.
+          Death is cheap, and you will have to get used to loss. However, with
+          proper planning and strategy, even the lowliest of recruits can become
+          a legendary hero. Only once you have proven your experience as a
+          successful guild will you be given opportunities to recover magical
+          artifacts or slay/ capture powerful monsters, and even then you will
+          have to be careful, for even the most powerful of adventurers can be
+          felled low.
         </p>
       </section>
 
@@ -135,34 +161,47 @@ export default function gamePage() {
         <section id="combat">
           <h3 className="text-2xl font-bold mb-2">Combat:</h3>
           <p>
-            Engage in deadly isometric turn-based tactical combat where strategy
-            and decision-making are crucial. Each adventurer you recruit has
-            randomized stats and skills, and gain experience with every
-            successful mission, but death is permanent! Consider terrain, cover,
-            and enemy weaknesses to gain the upper hand in battles. Fight
-            against a variety of enemies, including monsters, bandits, and rival
-            mercenary guilds. Will you be able to keep your adventurers alive
-            long enough for them to become legendary heroes?
+            Combat is the heart of this game. Taking place on an isometric grid,
+            you will have to navigate a randomly generated dungeon or lair,
+            fighting monsters and looting treasure as you go. Combat is turn
+            based, with each "team" taking a turn for all their units. Each unit
+            has a certain amount of action points which they can use to move,
+            turn, attack, or use items or environmental objects. Combat is
+            deadly and quick, with every blow being deadly to unprepared
+            mortals. Preparation is key, as knowing what you are about to face
+            can give you the edge you need to overcome the odds. Your parties
+            will almost always be either outnumbered or outmatched, and it's up
+            to you to ensure they are prepared for the challenges ahead.
           </p>
 
           <ul>
             <li>
               <strong>Your Adventurers:</strong> Your recruits are the lifeblood
               of your guild. Your first recruits will be weak and inexperienced,
-              but with proper tactics and skill, even the low can fell the
-              mighty. With a classless system, you can customize your
-              adventurers to your liking, and with a variety of weapons, armor,
-              equipment and spells to choose from, you can create truly diverse
-              and unique parties.
+              but with proper tactics and skill, even the humblest recruit can
+              bring low the mighty. With a classless system, you can customize
+              your adventurers to your liking, and with a variety of weapons,
+              armor, equipment and spells to choose from, you can create truly
+              diverse and unique parties.
             </li>
             <li>
               <strong>Your planning can save the day:</strong> Sending a party
               off into a dark, mysterious crypt? Make sure they have torches and
-              lanterns to light the way. Fighting a group of bandits? Make sure
-              your adventurers have ranged weapons to pick them off from afar.
-              Knowledge and preparation are key, and equipping your adventurers
-              with the right gear can make the difference between a successful
-              mission and a total party wipe.
+              lanterns to light the way. Hunting a werewolf and his pack? Make
+              sure to bring silver plated weapons and armor. Preparation is key,
+              and it is up to you to discover and determine the most effective
+              way to accomplish your goals.
+            </li>
+            <li>
+              <strong>Live to fight another day:</strong> Missions are not all
+              or nothing. If you are in over your head, you can always retreat
+              your party and try to recuperate some of your losses. While this
+              wont bode well for a quest giver, it is better than losing your
+              entire party. As well, if your only goal is to explore a location
+              or recover an item, fighting to the death isn't always necessary.
+              You can always try to sneak past enemies, or use your hardiest
+              adventurers to distract enemies while your stealthy ones can
+              complete the objectives quickly.
             </li>
             {/* Add more combat mechanics as needed */}
           </ul>
@@ -171,39 +210,39 @@ export default function gamePage() {
         <section id="exploration">
           <h3 className="text-2xl font-bold mb-2">The Worldscape:</h3>
           <p>
-            Organize your parties and manage quests on a real time procedurally
-            generated world map, where time progresses and events unfold with or
-            without your intervention. Send your adventurers to explore the
-            world, uncovering new locations and opportunities for fame and
-            fortune. As well, you can send out scouting parties or caravans to
-            gather resources and information from the various locations on the
-            map. Occasionally, you might even encounter other mercenary guilds,
-            and you can choose to engage them in combat or negotiate with them,
-            or even hire them to join your burgeoning guild.
+            The second largest aspect of the game, the Worldscape is where you
+            will plan out your quests, manage your bases, and oversee the world
+            as real time progresses. You will see your moving parties, neutral
+            or enemy parties, as well as places of interest, such as villages or
+            dungeons. As well, you will always be able to see your current
+            finances and time, so you can prepare accordingly when one of your
+            parties will arrive at a location. Random events will occur, and its
+            up to you to engage or avoid them... if you can!
           </p>
 
           <ul>
             <li>
               <strong>Dynamic Events:</strong> As your parties explore the
               world, they will encounter a variety of events, ranging from
-              simple encounters with monsters or bandits, to more complex events
+              simple encounters with traders or bandits, to more complex events
               such as a village being attacked by a dragon, or a noble
               requesting your aid in a quest. These events can be ignored, or
               you can choose to intervene, and your choices will impact your
-              guild's reputation and influence in the surrounding lands. For
-              example, if you refuse to help a village being attacked by
-              bandits, your guild's reputation will suffer, and they may even
-              refuse to let you recruit villagers in the future.
+              guild's reputation and influence. For example, if you refuse to
+              help a village being attacked by bandits, your guild's reputation
+              will suffer, and they may even refuse to let you recruit villagers
+              in the future until you make amends.
             </li>
             <li>
-              <strong>Quests and Choices:</strong> As time progresses, you will
-              be given simple quests by local villages and towns, such as
-              clearing out a nearby crypt or dungeon, or escorting a caravan to
-              a distant town. As your renown grows, you will be given more
-              complex quests by the kingdom's lords and nobles, such as
-              retrieving a lost artifact, or slaying a legendary beast. These
-              quests can often be solved in different ways, and your success or
-              failure will impact those quest givers opinion of you.
+              <strong>Quests and Choices:</strong> When you start the game, you
+              will only be given simple tasks by local villages and towns, such
+              as clearing out a nearby crypt or dungeon, or escorting a caravan
+              to a distant village. As your renown grows however, you will be
+              given more difficult and serious quests by the kingdom's lords and
+              nobles, such as retrieving a lost artifact, or slaying a legendary
+              beast. These quests can sometimes be solved in different ways, and
+              your success or failure will impact those quest givers opinion of
+              you.
             </li>
             {/* Add more exploration mechanics as needed */}
           </ul>
@@ -213,36 +252,44 @@ export default function gamePage() {
           <h3 className="text-2xl font-bold mb-2">Base Management</h3>
           <p>
             Beginning with an old tavern, you will have to build and expand your
-            guild headquarters, adding new sections and facilities to improve
-            your guilds efficiency and capabilities. Build stables to house your
-            mounts, a library to research new technologies, or a training
-            grounds to hone your adventurers skills. If you are successful
-            enough, you may even be able to turn your guildhall into a mighty
-            fortress, complete with walls, towers, and defensive structures, or
-            build a new guildhall in a different locations to expand your
-            influence.
+            guild headquarters, adding new facilities to improve your guilds
+            efficiency and capabilities. Build stables to house your mounts, a
+            library to research new technologies, or a training grounds to hone
+            your adventurers physical skills. Every facility is placed on a
+            top-down grid, and you will have total freedom to design your
+            guildhall as you see fit. Want to create a fortress manned by
+            heavily armored knights? Or perhaps a magical academy filled with
+            wizards and scholars? The choice is yours.
           </p>
 
           <ul>
             <li>
-              <strong>Size and Scope</strong> Your guildhall begins as a simple
-              tavern and with every addition you will have to pay resources and
-              taxes. As your guildhall grows, so will your expenses, and you
-              will have to manage your finances carefully to ensure you can
-              afford the monthly upkeep. If you fail to pay your taxes, your
-              guildhall will be seized by the local lord, and you will have to
-              start over, unless you have a second base to cover the costs.
+              <strong>Size and Scope:</strong> Your guildhall small, with only a
+              wooden fence and sleeping quarters for your first party. With
+              every addition you will have to pay resources and taxes. As your
+              guildhall grows, so will your expenses, and you will have to
+              manage your finances carefully to ensure you can afford the
+              monthly upkeep. If you fail to pay your taxes, your guildhall will
+              be seized by the local lord, and you will have to start over,
+              unless you have a second base to cover the costs.
             </li>
             <li>
-              <strong>Resource Management:</strong> Aside from gold and people,
-              you will have to manage a variety of different resources such as
-              food, drink, magical tomes, and steel. These resources are used to
-              build new facilities, research new technologies and create new
-              equipment. You can gather resources by sending parties to mines or
-              lumberyards, or by trading with local villages and towns. As well,
-              you can send out caravans to gather more exotic resources from
-              distant locations, but be careful, as these caravans are
-              vulnerable to attack by monsters and bandits.
+              <strong>Resource Management:</strong> Aside from gold and
+              manpower, you will have to manage a variety of different resources
+              such as food, drink, magical tomes, and ores of different types.
+              These resources are used to build new facilities, research new
+              technologies and create new equipment. You can gather resources by
+              sending parties to mines or lumberyards, or by trading with local
+              villages and towns. As well, you can send out caravans to gather
+              more exotic resources from distant locations, but be sure to send
+              skilled adventurers, as these caravans are vulnerable to attack by
+              monsters and bandits.
+            </li>
+            <li>
+              <strong>Be as dependant or free as you wish:</strong> When it comes to gathering your people and resources, 
+              you are given the freedom to determine how you accomplish your goals. You can choose to sign contracts with nearby villages
+               and towns for supplies in return for completing quests, or you can choose to build your own facilities and halls to gather your own 
+               resources. As long as the taxes get paid, the lords of the land don't care how you get your materials.
             </li>
             {/* Add more base management mechanics as needed */}
           </ul>
@@ -251,9 +298,9 @@ export default function gamePage() {
         <section id="technology-tree">
           <h3 className="text-2xl font-bold mb-2">Technology Tree</h3>
           <p>
-            Whether its learning new smithing methods to speed up production, or
+            Whether its learning new smithing methods to speed up production or create new metals, or
             researching new spells for your magically inclined adventurers, the
-            technology tree will be a key part of your guild's progression. As
+             three technology trees will be a key part of your guild's progression. As
             you complete quests and expand your guildhall, you will gain access
             to new technologies, allowing you to create new equipment and
             spells, and even newer, advanced facilities such as a dwarven forge,
@@ -279,6 +326,23 @@ export default function gamePage() {
               hefty profit, but be careful, as some artifacts may be cursed,
               requiring you to learn rituals to purify the items before they
               bring misfortune to your guild.
+            </li>
+            <li>
+              <strong>The Magical Tree:</strong> Hiring arcane scholars and giving them the space in a library will allow you to research
+              new spells, as well as discover which of your recruits has magical potential. As well, you will be able to research new magical items, or use
+              rituals on the worldmap to gain powerful boons or remove curses from artifacts.
+            </li>
+            <li>
+              <strong>The Martial Tree:</strong> By hiring blacksmiths and giving them the space in a smithy, you will be able to improve your guilds equipment, craft new items, 
+              and research new materials and techniques to improve their efficiency. They will be able to directly take the resources you gather and turn them into weapons, armor and 
+              other equipment for your adventurers out in the field. 
+            </li>
+            <li>
+              <strong>The Innovation Tree:</strong> By hiring specialized researchers and recruiters, you will be able to improve 
+              the non combat, non magical aspects of your guild. You will be able to research topics such as new medicines, better living quarters,
+              or even new techniques for haggling and bartering, or negotiating quests for better pay. Finally, research down this tree will allow you to recruit better and more 
+              specialized / experienced recruits, or even allow you to tame and train different beasts to use as mounts or companions. After all,
+              why walk to your quest location when you could instead ride a mighty gryphon or drake?
             </li>
             {/* Add more technology tree mechanics as needed */}
           </ul>
@@ -468,20 +532,14 @@ export default function gamePage() {
       <section id="art-and-design">
         <h2 className="text-3xl font-bold mb-2">Art and Design</h2>
 
-        <p>
-          WORK IN PROGRESS
-        </p>
+        <p>WORK IN PROGRESS</p>
       </section>
 
       <section id="audio">
         <h2 className="text-3xl font-bold mb-2">Audio</h2>
 
-        <p>
-          WORK IN PROGRESS
-        </p>
+        <p>WORK IN PROGRESS</p>
       </section>
-
-      
 
       {/* Add more sections as needed */}
       <Blurb />
