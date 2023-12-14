@@ -39,7 +39,7 @@ export default function DocumentPage() {
           <div className="collapse-title text-xl font-medium">How It Works</div>
           <div className="collapse-content">
             <section>
-              <h2 class="text-2xl font-bold mb-2">MongoDB Connection Logic</h2>
+              <h2 className="text-2xl font-bold mb-2">MongoDB Connection Logic</h2>
               <p>
                 The MongoDB connection logic in this code serves to establish a
                 connection to a MongoDB database within a Next.js project using
@@ -48,7 +48,7 @@ export default function DocumentPage() {
             </section>
 
             <section>
-              <h2 class="text-2xl font-bold mb-2">
+              <h2 className="text-2xl font-bold mb-2">
                 Environment Variable Check
               </h2>
               <p>
@@ -59,7 +59,7 @@ export default function DocumentPage() {
             </section>
 
             <section>
-              <h2 class="text-2xl font-bold mb-2">MongoDB URI Retrieval</h2>
+              <h2 className="text-2xl font-bold mb-2">MongoDB URI Retrieval</h2>
               <p>
                 Once the environment variable is confirmed, the code retrieves
                 the MongoDB URI from the environment variable (
@@ -69,7 +69,7 @@ export default function DocumentPage() {
             </section>
 
             <section>
-              <h2 class="text-2xl font-bold mb-2">
+              <h2 className="text-2xl font-bold mb-2">
                 MongoClient Instance Creation
               </h2>
               <p>
@@ -82,7 +82,7 @@ export default function DocumentPage() {
             </section>
 
             <section>
-              <h2 class="text-2xl font-bold mb-2">Development Mode Handling</h2>
+              <h2 className="text-2xl font-bold mb-2">Development Mode Handling</h2>
               <p>
                 In development mode, the code employs a global variable strategy
                 to preserve the <code>MongoClient</code>
@@ -93,7 +93,7 @@ export default function DocumentPage() {
             </section>
 
             <section>
-              <h2 class="text-2xl font-bold mb-2">Production Mode Handling</h2>
+              <h2 className="text-2xl font-bold mb-2">Production Mode Handling</h2>
               <p>
                 In production mode, a new <code>MongoClient</code> instance is
                 created. This approach is adopted to maintain separation and
@@ -103,7 +103,7 @@ export default function DocumentPage() {
             </section>
 
             <section>
-              <h2 class="text-2xl font-bold mb-2">Exporting the Promise</h2>
+              <h2 className="text-2xl font-bold mb-2">Exporting the Promise</h2>
               <p>
                 The resulting <code>clientPromise</code> is a promise that
                 encapsulates the connection to the MongoDB server. This promise
@@ -114,7 +114,7 @@ export default function DocumentPage() {
             </section>
 
             <section>
-              <h2 class="text-2xl font-bold mb-2">Summary</h2>
+              <h2 className="text-2xl font-bold mb-2">Summary</h2>
               <p>
                 In summary, the provided code establishes a robust and adaptable
                 mechanism for managing MongoDB connections, considering both
@@ -170,7 +170,7 @@ export default function DocumentPage() {
           <div className="collapse-title text-xl font-medium">Use Cases</div>
           <div className="collapse-content">
             <section>
-              <h2 class="text-2xl font-bold mb-2">User Authentication</h2>
+              <h2 className="text-2xl font-bold mb-2">User Authentication</h2>
               <p>
                 The MongoDB connection established by this feature enables me to
                 use user authentication. It enables the storage and retrieval of
@@ -182,7 +182,7 @@ export default function DocumentPage() {
             </section>
 
             <section>
-              <h2 class="text-2xl font-bold mb-2">
+              <h2 className="text-2xl font-bold mb-2">
                 Sending/Retrieving Comments
               </h2>
               <p>
@@ -223,13 +223,13 @@ export default function DocumentPage() {
           </div>
           <div className="collapse-content">
             <section>
-              <h2 class="text-2xl font-bold mb-2">Endpoint:</h2>
+              <h2 className="text-2xl font-bold mb-2">Endpoint:</h2>
               <p>
                 <code>/api/auth/[...nextauth]/route.js</code>
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Purpose:</h2>
+              <h2 className="text-2xl font-bold mb-2">Purpose:</h2>
               <p>
                 This route handles authentication through NextAuth, allowing
                 users to sign in and obtain authorization tokens. The
@@ -238,11 +238,11 @@ export default function DocumentPage() {
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Method:</h2>
+              <h2 className="text-2xl font-bold mb-2">Method:</h2>
               <p>POST, GET</p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Parameters:</h2>
+              <h2 className="text-2xl font-bold mb-2">Parameters:</h2>
               <ul>
                 <li>
                   <code>username</code>: Users username (for MongoDB provider)
@@ -257,7 +257,7 @@ export default function DocumentPage() {
               </ul>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Providers:</h2>
+              <h2 className="text-2xl font-bold mb-2">Providers:</h2>
 
               <p>
                 The authentication process supports the following providers:
@@ -269,7 +269,7 @@ export default function DocumentPage() {
               </ul>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Password Security:</h2>
+              <h2 className="text-2xl font-bold mb-2">Password Security:</h2>
               <p>
                 For the MongoDB provider, user passwords are securely stored
                 using password hashing techniques, ensuring the protection of
@@ -277,14 +277,14 @@ export default function DocumentPage() {
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Access:</h2>
+              <h2 className="text-2xl font-bold mb-2">Access:</h2>
               <p>
                 Successful authentication through this route grants access to
                 the restricted page on the website.
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Response:</h2>
+              <h2 className="text-2xl font-bold mb-2">Response:</h2>
               <p>
                 The route responds with a JSON object containing user
                 information and an authorization token upon successful
@@ -292,7 +292,7 @@ export default function DocumentPage() {
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Code Explanation:</h2>
+              <h2 className="text-2xl font-bold mb-2">Code Explanation:</h2>
               <p>
                 The code for this authentication route utilizes NextAuth with
                 multiple providers, including Google, GitHub, and custom MongoDB
@@ -319,13 +319,13 @@ export default function DocumentPage() {
           </div>
           <div className="collapse-content">
             <section>
-              <h2 class="text-2xl font-bold mb-2">Endpoint:</h2>
+              <h2 className="text-2xl font-bold mb-2">Endpoint:</h2>
               <p>
                 <code>/api/sendcomment/route.js</code>
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Purpose:</h2>
+              <h2 className="text-2xl font-bold mb-2">Purpose:</h2>
               <p>
                 This route facilitates the sending and receiving of user
                 comments. It allows the storage of comments in the MongoDB
@@ -333,12 +333,12 @@ export default function DocumentPage() {
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Methods:</h2>
+              <h2 className="text-2xl font-bold mb-2">Methods:</h2>
               <p>POST (for sending comments)</p>
               <p>GET (for retrieving comments)</p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Parameters:</h2>
+              <h2 className="text-2xl font-bold mb-2">Parameters:</h2>
               <ul>
                 <li>
                   <code>username</code>: Username of the user sending the
@@ -351,13 +351,13 @@ export default function DocumentPage() {
               </ul>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Response:</h2>
+              <h2 className="text-2xl font-bold mb-2">Response:</h2>
               <p>
                 JSON array of comments for the specified post (for GET request).
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Code Explanation:</h2>
+              <h2 className="text-2xl font-bold mb-2">Code Explanation:</h2>
               <p>
                 The provided code handles the submission and retrieval of
                 comments. For the POST request, the route inserts the users
@@ -380,13 +380,13 @@ export default function DocumentPage() {
           <div className="collapse-title text-xl font-medium">Send Email</div>
           <div className="collapse-content">
             <section>
-              <h2 class="text-2xl font-bold mb-2">Endpoint:</h2>
+              <h2 className="text-2xl font-bold mb-2">Endpoint:</h2>
               <p>
                 <code>/api/sendEmail/route.js</code>
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Purpose:</h2>
+              <h2 className="text-2xl font-bold mb-2">Purpose:</h2>
               <p>
                 This route handles the sending of emails using the Nodemailer
                 library, facilitating communication with users or
@@ -394,11 +394,11 @@ export default function DocumentPage() {
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Method:</h2>
+              <h2 className="text-2xl font-bold mb-2">Method:</h2>
               <p>POST</p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Parameters:</h2>
+              <h2 className="text-2xl font-bold mb-2">Parameters:</h2>
               <ul>
                 <li>
                   <code>username</code>: Senders username
@@ -415,14 +415,14 @@ export default function DocumentPage() {
               </ul>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Response:</h2>
+              <h2 className="text-2xl font-bold mb-2">Response:</h2>
               <p>
                 JSON object indicating the success or failure of the email
                 sending process.
               </p>
             </section>
             <section>
-              <h2 class="text-2xl font-bold mb-2">Code Explanation:</h2>
+              <h2 className="text-2xl font-bold mb-2">Code Explanation:</h2>
               <p>
                 The provided code utilizes the Nodemailer library to send
                 emails. It creates a transporter with the SendGrid SMTP details

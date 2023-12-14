@@ -7,19 +7,22 @@ import "react-quill/dist/quill.snow.css"; // import styles
 import dynamic from "next/dynamic";
 import DOMPurify from "dompurify";
 
-
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+
+// CommentPage.js
+// ... (other imports and code)
 
 export default function CommentPage() {
   const usernameRef = useRef("");
   const commentRef = useRef("");
   const [showModal, setShowModal] = useState(false);
+  const [isError, setIsError] = useState(false); // New state for tracking errors
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
-      const res = await fetch("/api/sendComment", {
+      const res = await fetch("/api/comment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,16 +36,19 @@ export default function CommentPage() {
       if (!res.ok) {
         throw new Error("HTTP status " + res.status);
       }
+
       setShowModal(true);
-      commentRef.current= "";
+      commentRef.current = "";
       e.target.reset();
-      
+
       console.log("Comment submitted successfully");
       console.log(res.status);
 
       // Clear the input fields using refs
     } catch (error) {
       console.error("Error submitting comment:", error);
+      setIsError(true);
+      setShowModal(true); // Show modal even on error
     }
   };
 
@@ -56,13 +62,15 @@ export default function CommentPage() {
 
   const handleModalClose = () => {
     setShowModal(false);
+    setIsError(false); // Reset error state when closing the modal
     fetchComments();
   };
+
   const [comments, setComments] = useState([]);
 
   const fetchComments = async () => {
     try {
-      const res = await fetch("/api/sendComment");
+      const res = await fetch("/api/comment");
       if (!res.ok) {
         throw new Error("HTTP status " + res.status);
       }
@@ -96,7 +104,7 @@ export default function CommentPage() {
             type="text"
             ref={usernameRef}
             onChange={handleUsernameChange}
-            className="mt-2 p-2 border border-gray-300 rounded"
+            className="mt-2 ml-2 p-2 input input-bordered input-primary"
           />
         </label>
         <label className="text-lg">
@@ -135,8 +143,19 @@ export default function CommentPage() {
       {showModal && (
         <dialog id="my_modal_1" className="modal" open>
           <div className="modal-box">
-            <h3 className="font-bold text-lg">Hello!</h3>
-            <p className="py-4">Comment successfully submitted!</p>
+            {isError ? (
+              <>
+                <h3 className="font-bold text-lg text-red-500">Error!</h3>
+                <p className="py-4">
+                  Failed to submit the comment. Please try again.
+                </p>
+              </>
+            ) : (
+              <>
+                <h3 className="font-bold text-lg">Comment Submitted!</h3>
+                <p className="py-4">Comment successfully submitted!</p>
+              </>
+            )}
             <div className="modal-action">
               <form method="dialog">
                 <button className="btn" onClick={handleModalClose}>
