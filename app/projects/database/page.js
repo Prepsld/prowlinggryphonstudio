@@ -110,7 +110,7 @@ export default function CommentPage() {
             required
             value={commentRef.current}
             onChange={handleCommentChange}
-            className="mt-2 border border-gray-300 rounded quill-editor"
+            className="mt-2 border border-gray-300 text-black rounded quill-editor"
           />
         </label>
         <button
