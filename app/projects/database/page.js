@@ -9,9 +9,6 @@ import DOMPurify from "dompurify";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
-// CommentPage.js
-// ... (other imports and code)
-
 export default function CommentPage() {
   const usernameRef = useRef("");
   const commentRef = useRef("");
