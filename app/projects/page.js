@@ -21,26 +21,7 @@ export default function Projects() {
           <h2 className="text-2xl font-bold mb-2">School Projects</h2>
 
           <ul className="list-none">
-            <li>
-              <div className="collapse bg-base-200">
-                <input type="checkbox" />
-                <div className="collapse-title text-xl font-medium">
-                  Authorization and Authentication Test
-                </div>
-                <div className="collapse-content">
-                  <p>
-                    This is my simple implementation of using nextAuth to create
-                    a sign in form.
-                  </p>
-                  <Link
-                    href="./projects/auth"
-                    className="btn btn-ghost text-xl"
-                  >
-                    Click here to test my sign in page!
-                  </Link>
-                </div>
-              </div>
-            </li>
+            
             <li>
               <div className="collapse bg-base-200">
                 <input type="checkbox" />
@@ -56,7 +37,7 @@ export default function Projects() {
                     href="./projects/signup"
                     className="btn btn-ghost text-xl"
                   >
-                    Dont use your real password!
+                    Don't use your real password!
                   </Link>
                 </div>
               </div>
@@ -65,7 +46,7 @@ export default function Projects() {
               <div className="collapse bg-base-200">
                 <input type="checkbox" />
                 <div className="collapse-title text-xl font-medium">
-                  Signin page ( custom test)
+                  Signin page (Custom Test)
                 </div>
                 <div className="collapse-content">
                   <p>
@@ -90,7 +71,7 @@ export default function Projects() {
               <div className="collapse bg-base-200">
                 <input type="checkbox" />
                 <div className="collapse-title text-xl font-medium">
-                  Database storage test
+                  Database Comment and Retrieval Test
                 </div>
                 <div className="collapse-content">
                   <p>

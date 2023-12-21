@@ -21,7 +21,7 @@ const Navigation = () => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="w-full navbar bg-base-300">
+        <div className="w-full navbar h-2 bg-base-300">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
@@ -64,7 +64,7 @@ const Navigation = () => {
               </li>
 
               <select
-                className="select select-secondary p-1 ml-1"
+                className="select select-secondary p-1 ml-2"
                 data-choose-theme
               >
                 <option disabled value="">

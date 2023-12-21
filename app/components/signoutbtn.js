@@ -14,8 +14,11 @@ export default function SignOutButton() {
   };
 
   return (
-    <button className="btn btn-warning" onClick={handleSignOut}>
-      Sign out!
-    </button>
+    <div className="flex items-center">
+      <p className="mr-2">Signed in as: {session.user.email}</p>
+      <button className="btn btn-warning" onClick={handleSignOut}>
+        Sign out!
+      </button>
+    </div>
   );
 }

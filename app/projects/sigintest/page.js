@@ -7,7 +7,7 @@ import Blurb from "../../components/Blurb";
 
 export default function SignIn() {
   const [credentials, setCredentials] = useState({
-    username: "",
+    email: "",
     password: "",
   });
   const [message, setMessage] = useState("You have successfully signed in!");
@@ -29,7 +29,7 @@ export default function SignIn() {
 
     const response = await signIn("login", {
       redirect: false,
-      username: credentials.username,
+      email: credentials.email.toLowerCase(),
       password: credentials.password,
     });
 
@@ -130,13 +130,13 @@ const handleGitHubSignIn = async () => {
         >
           <div className="mb-4">
             <label className="block text-m font-medium text-gray-700">
-              Username
+              Email {/* Change 'Username' to 'Email' */}
             </label>
             <input
               className="mt-1 p-2 border border-gray-300 rounded w-full"
-              type="text"
-              name="username"
-              value={credentials.username}
+              type="email"
+              name="email" /* Change 'username' to 'email' */
+              value={credentials.email} /* Change 'username' to 'email' */
               onChange={handleChange}
             />
           </div>
@@ -187,7 +187,6 @@ const handleGitHubSignIn = async () => {
             </div>
           </dialog>
         )}
-
         <Blurb />
       </div>
     );

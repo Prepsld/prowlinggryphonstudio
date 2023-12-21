@@ -21,7 +21,7 @@ import {hash, compare} from "bcrypt";
        id: "login",
        name: "MongoDB Login",
        credentials: {
-         username: { label: "Username", type: "text ", placeholder: "jsmith" },
+         email: { label: "Email", type: "email", placeholder: "john@example.com" },
          password: { label: "Password", type: "password" },
        },
        async authorize(credentials) {
@@ -31,7 +31,7 @@ import {hash, compare} from "bcrypt";
 
            const collection = await db.collection("users");
            const existingUser = await collection.findOne({
-             username: credentials.username,
+             email: credentials.email,
            });
 
            if (existingUser) {
@@ -59,7 +59,7 @@ import {hash, compare} from "bcrypt";
        id: "signup",
        name: "MongoDB Signup",
        credentials: {
-         username: { label: "Username", type: "text ", placeholder: "jsmith" },
+         email: { label: "Email", type: "email", placeholder: "john@example.com" },
          password: { label: "Password", type: "password" },
        },
        async authorize(credentials) {
@@ -69,12 +69,12 @@ import {hash, compare} from "bcrypt";
 
            const collection = await db.collection("users");
            const existingUser = await collection.findOne({
-             username: credentials.username,
+             email: credentials.email,
            });
 
            if (existingUser) {
              throw new Error(
-               "Username already exists. Choose a different username."
+               "User already exists. Choose a different E-Mail address."
              );
            }
 
@@ -82,7 +82,7 @@ import {hash, compare} from "bcrypt";
            const hashedPassword = await hash(credentials.password, 10);
 
            const newUser = await collection.insertOne({
-             username: credentials.username,
+             email: credentials.email,
              password: hashedPassword,
            });
 
@@ -104,7 +104,7 @@ import {hash, compare} from "bcrypt";
      strategy: "jwt",
    },
    pages: {
-     signIn: "/projects/signin", // specify the path to your custom sign-in page
+     signIn: "/projects/sigintest", // specify the path to your custom sign-in page
    },
  };
 const handler = NextAuth(authOptions);
