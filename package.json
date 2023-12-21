@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "server": "node server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,6 +13,7 @@
     "@auth/mongodb-adapter": "^2.0.7",
     "bcrypt": "^5.1.1",
     "dompurify": "^3.0.6",
+    "express": "^4.18.2",
     "mongodb": "^6.3.0",
     "next": "^14.0.4",
     "next-auth": "^4.24.5",
