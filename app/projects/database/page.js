@@ -83,7 +83,7 @@ export default function CommentPage() {
   }, []);
 
   return (
-    <div className="container mx-auto max-w-screen-md mt-8">
+    <div className="prose container mx-auto max-w-screen-md mt-8">
       <h1 className="text-4xl font-bold mb-6">Comment Page</h1>
       <Navigation />
       <p className="prose">
